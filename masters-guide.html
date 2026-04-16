@@ -1,0 +1,2437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katip's Germany Masters Guide 2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d0d0d;
+    --paper: #f5f0e8;
+    --cream: #ede7d5;
+    --rust: #c45c2a;
+    --rust-light: #f0cbb5;
+    --sage: #4a6741;
+    --sage-light: #d4e2d0;
+    --slate: #3a4a5c;
+    --slate-light: #d0d8e4;
+    --gold: #b8860b;
+    --gold-light: #f0e4b0;
+    --muted: #7a7060;
+    --border: #d0c8b8;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--ink);
+    border-bottom: 2px solid var(--rust);
+    padding: 0 2rem;
+    display: flex; align-items: center; gap: 0; height: 52px;
+    overflow-x: auto;
+  }
+  nav a {
+    color: #ccc; text-decoration: none; font-size: 12px; font-weight: 500;
+    letter-spacing: .06em; text-transform: uppercase; white-space: nowrap;
+    padding: 0 1rem; height: 52px; display: flex; align-items: center;
+    border-right: 1px solid #2a2a2a; transition: color .2s;
+  }
+  nav a:first-child { border-left: 1px solid #2a2a2a; }
+  nav a:hover, nav a.active { color: var(--rust); }
+  nav .nav-name { color: var(--rust); font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; margin-right: auto; white-space: nowrap; padding-right: 1.5rem; }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    padding: 5rem 2rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 39px, #1a1a1a 39px, #1a1a1a 40px),
+                repeating-linear-gradient(90deg, transparent, transparent 39px, #1a1a1a 39px, #1a1a1a 40px);
+    opacity: .4;
+  }
+  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; }
+  .hero-tag {
+    display: inline-block; background: var(--rust); color: white;
+    font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 2px; margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 900; color: white; line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .hero h1 span { color: var(--rust); }
+  .hero p {
+    color: #aaa; font-size: 16px; max-width: 600px; margin-bottom: 2rem; line-height: 1.8;
+  }
+  .hero-stats {
+    display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem;
+  }
+  .stat {
+    background: rgba(255,255,255,.05); border: 1px solid #2a2a2a;
+    padding: .8rem 1.2rem; border-radius: 4px;
+  }
+  .stat .n { font-family: 'DM Mono', monospace; font-size: 1.8rem; font-weight: 500; color: var(--rust); line-height: 1; }
+  .stat .l { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: .06em; margin-top: 2px; }
+
+  /* SECTIONS */
+  .section { max-width: 960px; margin: 0 auto; padding: 4rem 2rem; }
+  .section-header {
+    display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2.5rem;
+    padding-bottom: 1rem; border-bottom: 2px solid var(--ink);
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted);
+    letter-spacing: .1em;
+  }
+  .section-header h2 {
+    font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700;
+  }
+
+  /* ALERT BOXES */
+  .alert {
+    padding: 1rem 1.25rem; border-radius: 4px; border-left: 4px solid;
+    margin-bottom: 1.5rem; font-size: 14px; line-height: 1.6;
+  }
+  .alert-rust { border-color: var(--rust); background: var(--rust-light); }
+  .alert-sage { border-color: var(--sage); background: var(--sage-light); }
+  .alert-slate { border-color: var(--slate); background: var(--slate-light); }
+  .alert-gold { border-color: var(--gold); background: var(--gold-light); }
+  .alert strong { font-weight: 600; }
+
+  /* UNIVERSITY CARDS */
+  .uni-grid { display: grid; gap: 1.5rem; }
+  .uni-card {
+    background: white; border: 1px solid var(--border);
+    border-radius: 6px; overflow: hidden;
+  }
+  .uni-card-head {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap;
+    cursor: pointer; user-select: none;
+  }
+  .uni-card-head:hover { background: #fafaf8; }
+  .uni-name { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; }
+  .uni-city { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .uni-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .pill {
+    font-size: 11px; padding: 2px 9px; border-radius: 20px; font-weight: 500;
+  }
+  .pill-rust { background: var(--rust-light); color: var(--rust); }
+  .pill-sage { background: var(--sage-light); color: var(--sage); }
+  .pill-slate { background: var(--slate-light); color: var(--slate); }
+  .pill-gold { background: var(--gold-light); color: var(--gold); }
+  .uni-toggle { font-size: 20px; color: var(--muted); transition: transform .25s; flex-shrink: 0; margin-top: 4px; }
+  .uni-toggle.open { transform: rotate(45deg); }
+  .uni-body { display: none; padding: 1.5rem; border-top: 1px solid var(--border); }
+  .uni-body.open { display: block; }
+
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+  .info-item { background: var(--cream); border-radius: 4px; padding: .75rem 1rem; }
+  .info-item .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 3px; font-weight: 600; }
+  .info-item .val { font-size: 13px; font-weight: 500; color: var(--ink); line-height: 1.5; }
+
+  .sub-section { margin-bottom: 1.25rem; }
+  .sub-section h4 { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; margin-bottom: .6rem; }
+  .sub-section p, .sub-section li { font-size: 13px; line-height: 1.7; color: #333; }
+  .sub-section ul { padding-left: 1.2rem; }
+  .sub-section li { margin-bottom: 3px; }
+
+  .links-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
+  .link-btn {
+    font-size: 12px; padding: 6px 14px; border-radius: 3px; text-decoration: none;
+    font-weight: 500; border: 1px solid; transition: all .15s; display: inline-block;
+  }
+  .link-btn-rust { background: var(--rust); color: white; border-color: var(--rust); }
+  .link-btn-rust:hover { background: #a34a1e; }
+  .link-btn-outline { background: transparent; color: var(--ink); border-color: var(--border); }
+  .link-btn-outline:hover { border-color: var(--ink); }
+  .link-btn-sage { background: var(--sage); color: white; border-color: var(--sage); }
+  .link-btn-sage:hover { background: #3a5631; }
+
+  .sister-box {
+    background: #f0f7ee; border: 1px solid var(--sage-light);
+    border-left: 3px solid var(--sage);
+    border-radius: 4px; padding: .75rem 1rem; margin-top: 1rem; font-size: 13px;
+  }
+  .sister-box .sister-label {
+    font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--sage); font-weight: 700; margin-bottom: 4px;
+  }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before { content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
+  .tl-item { position: relative; margin-bottom: 2rem; }
+  .tl-dot {
+    position: absolute; left: -2rem; top: 4px;
+    width: 16px; height: 16px; border-radius: 50%;
+    border: 2px solid var(--rust); background: white;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .tl-dot.done { background: var(--sage); border-color: var(--sage); }
+  .tl-dot.urgent { background: var(--rust); }
+  .tl-date {
+    font-family: 'DM Mono', monospace; font-size: 11px; color: var(--rust);
+    font-weight: 500; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px;
+  }
+  .tl-title { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+  .tl-desc { font-size: 13px; color: #444; line-height: 1.6; }
+  .tl-tasks { margin-top: 8px; }
+  .tl-tasks li { font-size: 13px; color: #444; margin-bottom: 3px; }
+  .tl-tag {
+    display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 10px;
+    font-weight: 600; text-transform: uppercase; letter-spacing: .05em; margin-left: 6px; vertical-align: middle;
+  }
+  .tag-now { background: #fde8e4; color: var(--rust); }
+  .tag-soon { background: var(--gold-light); color: var(--gold); }
+  .tag-later { background: var(--slate-light); color: var(--slate); }
+
+  /* MOTIVATION LETTER */
+  .motiv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem; }
+  .motiv-card { background: white; border: 1px solid var(--border); border-radius: 5px; padding: 1.1rem 1.25rem; }
+  .motiv-card h4 { font-size: 13px; font-weight: 600; margin-bottom: .5rem; }
+  .motiv-card p, .motiv-card li { font-size: 13px; color: #444; line-height: 1.6; }
+  .motiv-card ul { padding-left: 1.1rem; }
+  .do { border-top: 3px solid var(--sage); }
+  .dont { border-top: 3px solid var(--rust); }
+
+  /* SCHOLARSHIPS */
+  .sc-grid { display: grid; gap: 1rem; }
+  .sc-card { background: white; border: 1px solid var(--border); border-radius: 5px; padding: 1.1rem 1.25rem; }
+  .sc-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .sc-card .sc-amount { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--sage); font-weight: 500; margin-bottom: 8px; }
+  .sc-card p, .sc-card li { font-size: 13px; color: #444; line-height: 1.6; }
+  .sc-card ul { padding-left: 1.1rem; margin-top: 4px; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; background: white; border-radius: 5px; overflow: hidden; border: 1px solid var(--border); margin-top: 1rem; }
+  th { background: var(--ink); color: white; padding: 10px 12px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+  td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #fafaf8; }
+
+  /* CHECKLIST */
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    padding: .6rem .75rem .6rem 2.2rem; position: relative;
+    font-size: 13px; border-bottom: 1px solid var(--border); color: #333;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: '☐'; position: absolute; left: .6rem;
+    color: var(--muted); font-size: 15px; top: .55rem;
+  }
+  .checklist-wrap { background: white; border: 1px solid var(--border); border-radius: 5px; overflow: hidden; margin-bottom: 1.25rem; }
+  .checklist-title { background: var(--cream); padding: .6rem .75rem; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--border); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink); color: #888; text-align: center;
+    padding: 2rem; font-size: 12px; margin-top: 4rem;
+  }
+  footer strong { color: var(--rust); font-family: 'Playfair Display', serif; font-size: 14px; }
+
+  /* UTILITIES */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  .mono { font-family: 'DM Mono', monospace; }
+  .text-muted { color: var(--muted); }
+  .mb1 { margin-bottom: .5rem; }
+  .mb2 { margin-bottom: 1rem; }
+  .mb3 { margin-bottom: 1.5rem; }
+
+  @media (max-width: 640px) {
+    .info-grid, .motiv-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1rem; }
+    nav .nav-name { display: none; }
+  }
+
+  /* LOCK OVERLAY */
+  #lock-overlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: #0d0d0d;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+  }
+  .lock-box {
+    text-align: center; max-width: 360px; padding: 2rem;
+  }
+  .lock-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .lock-box h2 {
+    font-family: 'Playfair Display', serif; color: white;
+    font-size: 1.6rem; margin-bottom: .5rem;
+  }
+  .lock-box p { color: #888; font-size: 14px; margin-bottom: 1.5rem; }
+  .lock-input-row { display: flex; gap: 10px; justify-content: center; margin-bottom: 1rem; }
+  .lock-digit {
+    width: 54px; height: 62px; text-align: center;
+    font-family: 'DM Mono', monospace; font-size: 1.6rem; font-weight: 500;
+    background: #1a1a1a; border: 1px solid #333; border-radius: 6px;
+    color: white; outline: none; caret-color: #c45c2a;
+    transition: border-color .2s;
+  }
+  .lock-digit:focus { border-color: #c45c2a; }
+  .lock-digit.error { border-color: #e24b4a; animation: shake .3s; }
+  .lock-digit.success { border-color: #4a6741; }
+  .lock-hint { font-size: 12px; color: #555; }
+  .lock-error { color: #e24b4a; font-size: 13px; margin-top: .5rem; min-height: 18px; }
+  @keyframes shake {
+    0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)}
+  }
+
+
+  /* GPA LOCK */
+  .gpa-locked {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: #1a1a1a; color: #c45c2a;
+    font-family: 'DM Mono', monospace; font-size: .9em;
+    padding: 1px 7px; border-radius: 3px; cursor: pointer;
+    border: 1px solid #333; transition: border-color .15s;
+    user-select: none;
+  }
+  .gpa-locked:hover { border-color: #c45c2a; }
+  .gpa-unlock-hint { font-size: .75em; opacity: .7; }
+
+  /* UNLOCK MODAL */
+  #gpa-modal-bg {
+    display: none; position: fixed; inset: 0; z-index: 9999;
+    background: rgba(0,0,0,.7); align-items: center; justify-content: center;
+  }
+  #gpa-modal-bg.visible { display: flex; }
+  #gpa-modal {
+    background: #0d0d0d; border: 1px solid #333; border-radius: 8px;
+    padding: 2rem 2.5rem; text-align: center; max-width: 320px; width: 90%;
+  }
+  #gpa-modal h3 { font-family: 'Playfair Display', serif; color: white; font-size: 1.2rem; margin-bottom: .4rem; }
+  #gpa-modal p { color: #888; font-size: 13px; margin-bottom: 1.2rem; }
+  .gpa-digit-row { display: flex; gap: 8px; justify-content: center; margin-bottom: .75rem; }
+  .gpa-digit {
+    width: 50px; height: 58px; text-align: center;
+    font-family: 'DM Mono', monospace; font-size: 1.5rem; font-weight: 500;
+    background: #1a1a1a; border: 1px solid #333; border-radius: 6px;
+    color: white; outline: none; caret-color: #c45c2a; transition: border-color .2s;
+  }
+  .gpa-digit:focus { border-color: #c45c2a; }
+  .gpa-digit.gpa-error { border-color: #e24b4a; animation: gpa-shake .3s; }
+  .gpa-digit.gpa-ok { border-color: #4a6741; }
+  .gpa-err-msg { color: #e24b4a; font-size: 12px; min-height: 16px; margin-bottom: .5rem; }
+  .gpa-cancel { font-size: 12px; color: #555; cursor: pointer; background: none; border: none; margin-top: .5rem; }
+  .gpa-cancel:hover { color: #aaa; }
+  @keyframes gpa-shake {
+    0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)}
+  }
+
+
+  /* COUNTDOWN */
+  .countdown-bar {
+    background: var(--ink); color: white;
+    padding: .9rem 2rem; text-align: center;
+    font-family: 'DM Mono', monospace; font-size: 13px; letter-spacing:.04em;
+  }
+  .countdown-bar .cd-inner { max-width:960px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:1.5rem; flex-wrap:wrap; }
+  .cd-unit { text-align:center; }
+  .cd-num { font-size:1.6rem; font-weight:500; color:var(--rust); line-height:1; }
+  .cd-label { font-size:10px; color:#888; text-transform:uppercase; letter-spacing:.08em; }
+  .cd-sep { font-size:1.4rem; color:#333; margin-top:-6px; }
+
+  /* CHECKABLE ROWS */
+  .check-item {
+    display:flex; align-items:flex-start; gap:10px;
+    padding:.65rem .75rem; border-bottom:1px solid var(--border);
+    transition: background .15s; cursor:pointer;
+  }
+  .check-item:last-child { border-bottom:none; }
+  .check-item:hover { background:#fafaf8; }
+  .check-item.done { background:#f0f7ee; }
+  .check-item.done .ci-text { text-decoration:line-through; color:var(--muted); }
+  .ci-box {
+    width:18px; height:18px; border:2px solid var(--border); border-radius:3px;
+    flex-shrink:0; margin-top:2px; display:flex; align-items:center; justify-content:center;
+    transition: all .15s; background:white;
+  }
+  .check-item.done .ci-box { background:var(--sage); border-color:var(--sage); }
+  .ci-check { color:white; font-size:11px; display:none; }
+  .check-item.done .ci-check { display:block; }
+  .ci-text { font-size:13px; color:#333; flex:1; line-height:1.5; }
+  .ci-note-btn {
+    font-size:11px; color:var(--muted); background:none; border:none; cursor:pointer;
+    padding:2px 6px; border-radius:3px; flex-shrink:0; margin-top:1px;
+    transition: all .15s;
+  }
+  .ci-note-btn:hover { background:var(--cream); color:var(--ink); }
+  .ci-note {
+    display:none; margin-top:6px; width:100%;
+    font-size:12px; padding:5px 8px; border:1px solid var(--border);
+    border-radius:3px; background:white; font-family:'DM Sans',sans-serif;
+    color:var(--ink); resize:vertical; min-height:48px; outline:none;
+  }
+  .ci-note:focus { border-color:var(--rust); }
+  .ci-note.visible { display:block; }
+  .check-item .ci-body { flex:1; }
+
+  /* PROGRESS BAR */
+  .progress-wrap { margin-bottom:1.5rem; }
+  .progress-label { display:flex; justify-content:space-between; font-size:12px; color:var(--muted); margin-bottom:5px; }
+  .progress-track { height:6px; background:var(--border); border-radius:3px; overflow:hidden; }
+  .progress-fill { height:100%; background:var(--sage); border-radius:3px; transition:width .4s; }
+
+  /* FILE UPLOAD */
+  .doc-upload-zone {
+    border:2px dashed var(--border); border-radius:6px; padding:1.5rem;
+    text-align:center; cursor:pointer; transition: border-color .2s, background .2s;
+    margin-bottom:1rem; background:white;
+  }
+  .doc-upload-zone:hover, .doc-upload-zone.drag-over { border-color:var(--rust); background:#fff8f5; }
+  .doc-upload-zone p { font-size:13px; color:var(--muted); margin:.3rem 0; }
+  .doc-upload-zone .upload-icon { font-size:1.8rem; margin-bottom:.4rem; }
+  .doc-upload-zone input[type=file] { display:none; }
+  .uploaded-files { display:flex; flex-direction:column; gap:6px; }
+  .uploaded-file {
+    display:flex; align-items:center; gap:10px;
+    background:white; border:1px solid var(--border); border-radius:4px;
+    padding:.5rem .75rem; font-size:13px;
+  }
+  .uploaded-file .uf-name { flex:1; color:var(--ink); font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .uploaded-file .uf-size { font-size:11px; color:var(--muted); flex-shrink:0; }
+  .uf-download { font-size:12px; color:var(--rust); cursor:pointer; background:none; border:none; flex-shrink:0; padding:2px 6px; border-radius:3px; }
+  .uf-download:hover { background:var(--rust-light); }
+  .uf-delete { font-size:12px; color:var(--muted); cursor:pointer; background:none; border:none; flex-shrink:0; }
+  .uf-delete:hover { color:#e24b4a; }
+  .upload-section-header { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); margin:1rem 0 .5rem; }
+
+  /* CALENDAR */
+  .cal-grid { display:grid; gap:1rem; }
+  .cal-month { background:white; border:1px solid var(--border); border-radius:6px; overflow:hidden; }
+  .cal-month-head {
+    background:var(--ink); color:white; padding:.7rem 1rem;
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .cal-month-head h3 { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; }
+  .cal-month-head .cal-phase { font-size:11px; color:#888; font-family:'DM Mono',monospace; }
+  .cal-weeks { padding:.5rem; }
+  .cal-week {
+    display:flex; gap:6px; margin-bottom:6px; align-items:flex-start;
+  }
+  .cal-week-label {
+    font-family:'DM Mono',monospace; font-size:10px; color:var(--muted);
+    width:40px; flex-shrink:0; padding-top:6px; text-align:right;
+  }
+  .cal-tasks-col { flex:1; display:flex; flex-direction:column; gap:4px; }
+  .cal-task {
+    font-size:12px; padding:5px 9px; border-radius:3px; line-height:1.4;
+    border-left:3px solid;
+  }
+  .ct-now { background:#fff0eb; border-color:var(--rust); color:#7a3010; }
+  .ct-doc { background:#e8f4e8; border-color:var(--sage); color:#2a4a28; }
+  .ct-prep { background:#edf2f8; border-color:var(--slate); color:#2a3848; }
+  .ct-app { background:#fdf6e3; border-color:var(--gold); color:#6b4d0a; }
+  .ct-visa { background:#f5effe; border-color:#8b5cf6; color:#4c1d95; }
+
+  /* CV SECTION */
+  .cv-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.5rem; }
+  .cv-card { background:white; border:1px solid var(--border); border-radius:5px; padding:1.1rem 1.25rem; }
+  .cv-card h3 { font-size:14px; font-weight:600; margin-bottom:.5rem; }
+  .cv-card .cv-tag { display:inline-block; font-size:10px; padding:2px 7px; border-radius:10px; font-weight:600; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.5rem; }
+  .cv-card ul { padding-left:1.1rem; }
+  .cv-card li { font-size:13px; color:#444; line-height:1.6; margin-bottom:2px; }
+  .cv-card p { font-size:13px; color:#444; line-height:1.6; }
+  .free-tag { background:#e8f4e8; color:var(--sage); }
+  .paid-tag { background:#fff0eb; color:var(--rust); }
+  .project-tag { background:#edf2f8; color:var(--slate); }
+
+  @media(max-width:640px){ .cv-grid{ grid-template-columns:1fr; } }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Katip's Masters Guide</span>
+  <a href="#overview">Overview</a>
+  <a href="#universities">Universities</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#documents">Documents</a>
+  <a href="#motiv">Motivation Letter</a>
+  <a href="#scholarships">Scholarships</a>
+  <a href="#checklist">Checklist</a><a href="#cv-strengthen">CV Tips</a><a href="#calendar">Calendar</a>
+</nav>
+
+<div class="countdown-bar">
+  <div class="cd-inner">
+    <span style="font-size:12px;color:#888;letter-spacing:.08em;text-transform:uppercase;">Time until Winter Semester 2027</span>
+    <div class="cd-unit"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Days</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Hours</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><div class="cd-num" id="cd-mins">--</div><div class="cd-label">Minutes</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><div class="cd-num" id="cd-secs">--</div><div class="cd-label">Seconds</div></div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">Germany Masters Application Guide — 2027 Intake</span>
+    <h1>Your roadmap to <span>Germany.</span><br>Built for Katip.</h1>
+    <p>8 universities. 1 clear plan. Everything you need from today until you board that flight — applications, scholarships, motivation letters, and a step-by-step timeline.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="n">8</div><div class="l">Universities</div></div>
+      <div class="stat"><div class="n"><span class="gpa-locked" onclick="unlockGPA(this)" title="Click to reveal">████ <span class="gpa-unlock-hint">🔒</span></span></div><div class="l">Your GPA</div></div>
+      <div class="stat"><div class="n">€0</div><div class="l">Tuition (most unis)</div></div>
+      <div class="stat"><div class="n">Oct 27</div><div class="l">Target intake</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<div id="overview">
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2>Your situation at a glance</h2>
+  </div>
+
+  <div class="alert alert-sage">
+    <strong>Good news on your MOI letter.</strong> Your MUIC letter from Asst. Prof. Dale Konstanz (Associate Dean, April 4 2025) is a valid Medium of Instruction letter. It explicitly states English is the medium of instruction, lists what that covers (lectures, assessments, materials), and carries the official Mahidol stamp. Most of your 8 target universities will accept this. Still recommended: take IELTS targeting 6.5 as a safety net for visa purposes and any university that requires a standardised score.
+  </div>
+
+  <div class="alert alert-rust">
+    <strong>Target intake: Winter Semester 2027 (October 2027).</strong> You are finishing your degree within 3 months, which means you will graduate around July–August 2025. This gives you roughly 18 months to prepare — enough time to do everything properly, take IELTS, learn basic German (A1–A2 helps with daily life), and write strong applications. Most application windows open April–May 2027 for October 2027 entry.
+  </div>
+
+  <table>
+    <thead><tr><th>Your profile</th><th>Status</th><th>Action needed</th></tr></thead>
+    <tbody>
+      <tr><td>Bachelor's degree (MUIC, Creative Technology)</td><td>✅ Finishing soon</td><td>Request official transcripts immediately</td></tr>
+      <tr><td>GPA <span class="gpa-locked" onclick="unlockGPA(this)" title="Click to reveal">████ <span class="gpa-unlock-hint">🔒</span></span></td><td>✅ Excellent</td><td>Get official GPA letter from MUIC</td></tr>
+      <tr><td>English proficiency</td><td>⚠️ MOI letter ready — IELTS pending</td><td>Book IELTS — target 6.5+</td></tr>
+      <tr><td>German language</td><td>❌ None</td><td>Start A1 (helpful, not required for English programs)</td></tr>
+      <tr><td>Passport</td><td>❓ Unknown</td><td>Check validity — needs 2+ years from Oct 2027</td></tr>
+      <tr><td>CV / résumé</td><td>❓ Unknown</td><td>Prepare academic CV (1–2 pages)</td></tr>
+      <tr><td>Motivation letter</td><td>❌ Not started</td><td>Draft by early 2027 — customise per university</td></tr>
+      <tr><td>Recommendation letters</td><td>⚠️ Contacts identified</td><td>Ask 2 professors + 1 internship supervisor</td></tr>
+      <tr><td>Blocked account (visa)</td><td>❌ Not set up</td><td>Set up Fintiba or Coracle by mid-2027</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- UNIVERSITIES -->
+<div id="universities" style="background: var(--cream);">
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2>The 8 universities</h2>
+  </div>
+
+  <div class="alert alert-slate">
+    <strong>How to read these cards.</strong> Click any card to expand full details. Your sister's Data Science options are noted in green where available. Universities are ordered by overall fit for your profile (IS / Digital Business / Tech Management).
+  </div>
+
+  <div class="uni-grid">
+
+    <!-- MÜNSTER -->
+    <div class="uni-card">
+      <div class="uni-card-head" onclick="toggleUni(this)">
+        <div>
+          <div class="uni-name">1. University of Münster</div>
+          <div class="uni-city">Münster, North Rhine-Westphalia · Public · Free for non-EU</div>
+          <div class="uni-pills">
+            <span class="pill pill-rust">⭐ #1 Recommendation</span>
+            <span class="pill pill-sage">IS Research Leader (ERCIS)</span>
+            <span class="pill pill-slate">QS ~301–350</span>
+          </div>
+        </div>
+        <div class="uni-toggle">+</div>
+      </div>
+      <div class="uni-body">
+        <div class="info-grid">
+          <div class="info-item"><div class="lbl">Your program</div><div class="val">M.Sc. Information Systems — Managing Digital Business major</div></div>
+          <div class="info-item"><div class="lbl">Tuition</div><div class="val">€0 tuition + ~€350/semester fee</div></div>
+          <div class="info-item"><div class="lbl">Living cost</div><div class="val">~€950–1,050/month</div></div>
+          <div class="info-item"><div class="lbl">Application deadline</div><div class="val">Winter: May 10 – July 15 · Summer: Nov 10 – Jan 15</div></div>
+          <div class="info-item"><div class="lbl">Application portal</div><div class="val">Direct — wi.uni-muenster.de</div></div>
+          <div class="info-item"><div class="lbl">Language requirement</div><div class="val">English only · IELTS 6.0 / TOEFL 80+ or MOI letter</div></div>
+        </div>
+        <div class="sub-section">
+          <h4>Why this is your #1</h4>
+          <p>The 'Managing Digital Business' major covers exactly what we identified for you: digital transformation strategy, IT management, business processes, data-driven decisions, and digital innovation. It's fully taught in English. ERCIS (European Research Center for Information Systems) is the leading IS research network in Europe — based here. Strong industry partnerships with Bayer, Deloitte, SAP, Dr. Oetker. Münster was awarded the world's most livable city.</p>
+        </div>
+        <div class="sub-section">
+          <h4>Entry requirements</h4>
+          <ul>
+            <li>Bachelor's in IS, Business Informatics, CS, or business with IT/quantitative background</li>
+            <li>At minimum: 18 ECTS in IS, 18 ECTS in CS, 18 ECTS in quantitative methods, 18 ECTS in business admin — your Creative Technology degree with business analyst experience may come close, but you should email the admissions office to check equivalency</li>
+            <li>GPA equivalent to German 2.9 or better (your <span class="gpa-locked" onclick="unlockGPA(this)" title="Click to reveal">████ <span class="gpa-unlock-hint">🔒</span></span> = ~German 1.5 — comfortably above this)</li>
+            <li>Complete application before graduation: you may apply with 75% or 140 ECTS completed</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <h4>Scholarships at Münster</h4>
+          <ul>
+            <li><strong>ProTalent Scholarship:</strong> Merit-based, €300/month, open to international students</li>
+            <li><strong>Deutschlandstipendium:</strong> €300/month — apply after enrollment, deadline typically spring</li>
+            <li><strong>DAAD Study Scholarship:</strong> External — €992/month (see Scholarships section)</li>
+          </ul>
+        </div>
+        <div class="sister-box">
+          <div class="sister-label">🔬 For your sister</div>
+          <strong>Yes — Data Science major available in the same program.</strong> Your sister can apply to M.Sc. Information Systems and choose the Data Science major. You'd be at the same university, same program, different tracks. This is the ideal scenario.
+        </div>
+        <div class="links-row">
+          <a href="https://www.wi.uni-muenster.de/prospective-students/our-courses-study/master-science-information-systems" target="_blank" class="link-btn link-btn-rust">Program page ↗</a>
+          <a href="https://www.uni-muenster.de/studium/en/studangebote/studiengaenge/infos.php?studgang=700" target="_blank" class="link-btn link-btn-outline">Apply ↗</a>
+          <a href="https://www.uni-muenster.de/international/en/studierende/general-information/cost-and-funding.html" target="_blank" class="link-btn link-btn-outline">Costs & funding ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BAMBERG -->
+    <div class="uni-card">
+      <div class="uni-card-head" onclick="toggleUni(this)">
+        <div>
+          <div class="uni-name">2. University of Bamberg</div>
+          <div class="uni-city">Bamberg, Bavaria · Public · Free for non-EU</div>
+          <div class="uni-pills">
+            <span class="pill pill-rust">IS Specialist</span>
+            <span class="pill pill-sage">UNESCO Heritage City</span>
+            <span class="pill pill-gold">Cheapest Option</span>
+          </div>
+        </div>
+        <div class="uni-toggle">+</div>
+      </div>
+      <div class="uni-body">
+        <div class="info-grid">
+          <div class="info-item"><div class="lbl">Your program</div><div class="val">M.Sc. International Information Systems Management (IISM)</div></div>
+          <div class="info-item"><div class="lbl">Tuition</div><div class="val">€0 tuition + ~€120/semester fee</div></div>
+          <div class="info-item"><div class="lbl">Living cost</div><div class="val">~€700–850/month</div></div>
+          <div class="info-item"><div class="lbl">Application deadline</div><div class="val">Winter: May 31 · Summer: Jan 31 (via uni-assist)</div></div>
+          <div class="info-item"><div class="lbl">Application portal</div><div class="val">uni-assist (€75 fee)</div></div>
+          <div class="info-item"><div class="lbl">Language requirement</div><div class="val">English only · IELTS 6.5 / TOEFL 90+</div></div>
+        </div>
+        <div class="sub-section">
+          <h4>About the program</h4>
+          <p>IISM is a dedicated IS management program focused on digital transformation, ERP systems (close SAP collaboration), international business and IT strategy. Small cohort = personal attention. Bamberg is one of Germany's most beautiful cities — medieval old town, UNESCO listed, entirely walkable. Lowest semester fees of all 8 universities.</p>
+        </div>
+        <div class="sub-section">
+          <h4>Entry requirements</h4>
+          <ul>
+            <li>Bachelor's in IS, business informatics, CS, or closely related field</li>
+            <li>IELTS 6.5 minimum — note this is higher than Münster, so your MOI letter should be accompanied by a strong IELTS score if possible</li>
+            <li>GPA German 2.5 equivalent (your <span class="gpa-locked" onclick="unlockGPA(this)" title="Click to reveal">████ <span class="gpa-unlock-hint">🔒</span></span> converts to ~1.5 — well above)</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <h4>Scholarships</h4>
+          <ul>
+            <li><strong>Deutschlandstipendium (Bamberg):</strong> €300/month — check university portal for dates</li>
+            <li><strong>DAAD:</strong> External (see Scholarships section)</li>
+          </ul>
+        </div>
+        <div class="sister-box">
+          <div class="sister-label">🔬 For your sister</div>
+          No dedicated Data Science masters at Bamberg. The M.Sc. International Software Systems Science is available in English (more technical/CS-focused) which has data analytics modules, but it is not a Data Science degree title. Sister would be better served at Münster, Trier, or another university for Data Science specifically.
+        </div>
+        <div class="links-row">
+          <a href="https://www.uni-bamberg.de/en/iism/" target="_blank" class="link-btn link-btn-rust">Program page ↗</a>
+          <a href="https://www.uni-assist.de" target="_blank" class="link-btn link-btn-outline">Apply via uni-assist ↗</a>
+          <a href="https://www.uni-bamberg.de/en/studium/bewerbung/" target="_blank" class="link-btn link-btn-outline">Admissions info ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARBURG -->
+    <div class="uni-card">
+      <div class="uni-card-head" onclick="toggleUni(this)">
+        <div>
+          <div class="uni-name">3. University of Marburg (Philipps)</div>
+          <div class="uni-city">Marburg, Hesse · Public · Free for non-EU</div>
+          <div class="uni-pills">
+            <span class="pill pill-slate">Historic Research University</span>
+            <span class="pill pill-sage">Interdisciplinary BI</span>
+          </div>
+        </div>
+        <div class="uni-toggle">+</div>
+      </div>
+      <div class="uni-body">
+        <div class="info-grid">
+          <div class="info-item"><div class="lbl">Your program</div><div class="val">M.Sc. Business Informatics (Wirtschaftsinformatik)</div></div>
+          <div class="info-item"><div class="lbl">Tuition</div><div class="val">€0 tuition + ~€420/semester fee</div></div>
+          <div class="info-item"><div class="lbl">Living cost</div><div class="val">~€800–950/month</div></div>
+          <div class="info-item"><div class="lbl">Application deadline</div><div class="val">Winter: July 15 · Summer: January 15</div></div>
+          <div class="info-item"><div class="lbl">Application portal</div><div class="val">Direct + uni-assist for international</div></div>
+          <div class="info-item"><div class="lbl">Language requirement</div><div class="val">Mostly English (some electives in German)</div></div>
+        </div>
+        <div class="sub-section">
+          <h4>About the program</h4>
+          <p>Interdisciplinary degree bridging IS, computer science, economics, and mathematics. Flexible elective structure — you can weight toward the business/strategy side. Classic German university town — small, entirely student-dominated, medieval architecture, excellent quality of life. 120 ECTS / 4 semesters with a 1-year software project team component that builds real team and PM skills.</p>
+        </div>
+        <div class="sub-section">
+          <h4>Entry requirements</h4>
+          <ul>
+            <li>Bachelor's in business informatics or comparable (IS, CS+business, economics+IT)</li>
+            <li>Min passing grade (your GPA is well above threshold)</li>
+            <li>Application via uni-assist for international applicants — allow 6 weeks processing time</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <h4>Scholarships</h4>
+          <ul>
+            <li><strong>Deutschlandstipendium (Marburg):</strong> €300/month — apply after admission</li>
+            <li><strong>DAAD:</strong> External (see Scholarships section)</li>
+          </ul>
+        </div>
+        <div class="sister-box">
+          <div class="sister-label">🔬 For your sister</div>
+          No dedicated Data Science masters in English at Marburg. Applied Statistics master is available but primarily German-language. Sister's best options remain Münster, Trier, or OVGU Magdeburg.
+        </div>
+        <div class="links-row">
+          <a href="https://www.uni-marburg.de/en/fb02/studiengaenge/master/wirtschaftsinformatik" target="_blank" class="link-btn link-btn-rust">Program page ↗</a>
+          <a href="https://www.uni-marburg.de/en/university/profile/study/admissions" target="_blank" class="link-btn link-btn-outline">Admissions ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHEMNITZ -->
+    <div class="uni-card">
+      <div class="uni-card-head" onclick="toggleUni(this)">
+        <div>
+          <div class="uni-name">4. Chemnitz University of Technology</div>
+          <div class="uni-city">Chemnitz, Saxony · Public · Free for non-EU</div>
+          <div class="uni-pills">
+            <span class="pill pill-gold">Most Affordable Overall</span>
+            <span class="pill pill-slate">East Germany</span>
+          </div>
+        </div>
+        <div class="uni-toggle">+</div>
+      </div>
+      <div class="uni-body">
+        <div class="info-grid">
+          <div class="info-item"><div class="lbl">Your program</div><div class="val">M.Sc. Information and Communication Systems</div></div>
+          <div class="info-item"><div class="lbl">Tuition</div><div class="val">€0 tuition + ~€270/semester fee</div></div>
+          <div class="info-item"><div class="lbl">Living cost</div><div class="val">~€650–800/month (very affordable)</div></div>
+          <div class="info-item"><div class="lbl">Application deadline</div><div class="val">Winter: July 15 · Summer: January 15 (via uni-assist)</div></div>
+          <div class="info-item"><div class="lbl">Application portal</div><div class="val">uni-assist</div></div>
+          <div class="info-item"><div class="lbl">Language requirement</div><div class="val">Primarily English</div></div>
+        </div>
+        <div class="sub-section">
+          <h4>About the program</h4>
+          <p>Covers IS, digital communications, networked systems, and IT architecture. More technical than Münster's managing digital business track — sits slightly left of your sweet spot but your structured, logical thinking profile handles it well. Chemnitz is small, affordable, and East Germany's hidden academic gem. Good option as a safety school with genuine quality.</p>
+        </div>
+        <div class="sub-section">
+          <h4>Entry requirements</h4>
+          <ul>
+            <li>Bachelor's in CS, IS, or engineering; relevant technical background</li>
+            <li>English proficiency — MOI letter likely acceptable; check with admissions</li>
+          </ul>
+        </div>
+        <div class="sister-box">
+          <div class="sister-label">🔬 For your sister</div>
+          No dedicated Data Science masters in English at Chemnitz. The International Master in Mathematics & CS is available in English but is mathematics-heavy. Not ideal for Data Science as a primary choice.
+        </div>
+        <div class="links-row">
+          <a href="https://www.tu-chemnitz.de/informatik/studium/master/ics.html" target="_blank" class="link-btn link-btn-rust">Program page ↗</a>
+          <a href="https://www.tu-chemnitz.de/verwaltung/studbuero/international/" target="_blank" class="link-btn link-btn-outline">International admissions ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- DUISBURG-ESSEN -->
+    <div class="uni-card">
+      <div class="uni-card-head" onclick="toggleUni(this)">
+        <div>
+          <div class="uni-name">5. University of Duisburg-Essen</div>
+          <div class="uni-city">Duisburg / Essen, NRW · Public · Free for non-EU</div>
+          <div class="uni-pills">
+            <span class="pill pill-slate">QS ~401–500</span>
+            <span class="pill pill-sage">Strong Industry Links (Ruhr)</span>
+          </div>
+        </div>
+        <div class="uni-toggle">+</div>
+      </div>
+      <div class="uni-body">
+        <div class="info-grid">
+          <div class="info-item"><div class="lbl">Your program</div><div class="val">M.Sc. Business Informatics (Wirtschaftsinformatik)</div></div>
+          <div class="info-item"><div class="lbl">Tuition</div><div class="val">€0 tuition + ~€300/semester fee</div></div>
+          <div class="info-item"><div class="lbl">Living cost</div><div class="val">~€750–900/month</div></div>
+          <div class="info-item"><div class="lbl">Application deadline</div><div class="val">Winter: May 31 · Summer: November 30</div></div>
+          <div class="info-item"><div class="lbl">Application portal</div><div class="val">Direct university portal</div></div>
+          <div class="info-item"><div class="lbl">Language requirement</div><div class="val">English · IELTS 5.5+ / TOEFL 80+ or Cambridge B2</div></div>
+        </div>
+        <div class="sub-section">
+          <h4>About the program</h4>
+          <p>Interdisciplinary program combining IS, CS, and economics. Strong links to the Ruhr industrial corridor — Thyssen, logistics companies, tech manufacturers. Two campuses (Duisburg and Essen) connected by metro. Language threshold (IELTS 5.5) is the lowest of all 8 universities, making this an accessible backup with solid academic quality.</p>
+        </div>
+        <div class="sub-section">
+          <h4>Entry requirements</h4>
+          <ul>
+            <li>German 3.0+ GPA (your <span class="gpa-locked" onclick="unlockGPA(this)" title="Click to reveal">████ <span class="gpa-unlock-hint">🔒</span></span> = ~German 1.5 — well above)</li>
+            <li>Bachelor's in business informatics, CS+business, or economics+IT</li>
+            <li>IELTS 5.5 / TOEFL 80 — lowest threshold on this list; MOI likely accepted</li>
+          </ul>
+        </div>
+        <div class="sister-box">
+          <div class="sister-label">🔬 For your sister</div>
+          UDE offers an M.Sc. in Data Science in English. Good option for your sister. Check: <a href="https://www.uni-due.de" target="_blank">uni-due.de</a>
+        </div>
+        <div class="links-row">
+          <a href="https://www.uni-due.de/wirtschaftsinformatik/masterstudium" target="_blank" class="link-btn link-btn-rust">Program page ↗</a>
+          <a href="https://www.uni-due.de/zim/studienbewerbung" target="_blank" class="link-btn link-btn-outline">Apply ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TUHH -->
+    <div class="uni-card" style="border-color: #e8c88a;">
+      <div class="uni-card-head" onclick="toggleUni(this)">
+        <div>
+          <div class="uni-name">6. Hamburg University of Technology (TUHH)</div>
+          <div class="uni-city">Hamburg · Public · ⚠️ €6,500 year 1 fee (DAAD scholarships available)</div>
+          <div class="uni-pills">
+            <span class="pill pill-gold">Innovation + Entrepreneurship</span>
+            <span class="pill pill-rust">Study 2 countries</span>
+          </div>
+        </div>
+        <div class="uni-toggle">+</div>
+      </div>
+      <div class="uni-body">
+        <div class="alert alert-gold"><strong>Fee note:</strong> TUHH's GTIME program charges €6,500 for year 1. Year 2 fees depend on partner university chosen. DAAD scholarships frequently cover this. Not fully free — but listed because the program is an exceptional fit for your entrepreneurship ambitions and people-first personality.</div>
+        <div class="info-grid">
+          <div class="info-item"><div class="lbl">Your program</div><div class="val">M.Sc. Global Technology & Innovation Management & Entrepreneurship (GTIME)</div></div>
+          <div class="info-item"><div class="lbl">Tuition</div><div class="val">€6,500 year 1 + varies year 2</div></div>
+          <div class="info-item"><div class="lbl">Living cost</div><div class="val">~€1,000–1,200/month (Hamburg)</div></div>
+          <div class="info-item"><div class="lbl">Application deadline</div><div class="val">~March 1 for September start each year</div></div>
+          <div class="info-item"><div class="lbl">Application portal</div><div class="val">g-time.org directly</div></div>
+          <div class="info-item"><div class="lbl">Language requirement</div><div class="val">English only · standard proficiency</div></div>
+        </div>
+        <div class="sub-section">
+          <h4>Why include this despite the fee</h4>
+          <p>Year 1 in Hamburg covers innovation management, design thinking, global innovation, digital transformation of the innovation value chain, entrepreneurship. Year 2 you choose from Denmark, Scotland, Finland, Japan, India, or Lithuania — each with a different specialisation. This is the only program on your list built for someone who eventually wants to build something of their own while being highly risk-averse now. DAAD frequently funds GTIME students.</p>
+        </div>
+        <div class="sub-section">
+          <h4>Entry requirements</h4>
+          <ul>
+            <li>Bachelor's in engineering, business/economics, science, or technology</li>
+            <li>GPA min 2.5 (yours is <span class="gpa-locked" onclick="unlockGPA(this)" title="Click to reveal">████ <span class="gpa-unlock-hint">🔒</span></span> — excellent)</li>
+            <li>Creative Technology + business analyst internship is a good profile for this program</li>
+          </ul>
+        </div>
+        <div class="sister-box">
+          <div class="sister-label">🔬 For your sister</div>
+          TUHH has no Data Science masters in English. Not suitable for your sister's primary goal.
+        </div>
+        <div class="links-row">
+          <a href="https://www.g-time.org" target="_blank" class="link-btn link-btn-rust">GTIME website ↗</a>
+          <a href="https://www.g-time.org/apply" target="_blank" class="link-btn link-btn-outline">Apply ↗</a>
+          <a href="https://www.g-time.org/fees-and-funding" target="_blank" class="link-btn link-btn-outline">Fees & funding ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FH SWF -->
+    <div class="uni-card">
+      <div class="uni-card-head" onclick="toggleUni(this)">
+        <div>
+          <div class="uni-name">7. South Westphalia University (FH SWF)</div>
+          <div class="uni-city">Iserlohn / Soest, NRW · Applied Sciences University · Free for non-EU</div>
+          <div class="uni-pills">
+            <span class="pill pill-sage">Practice-oriented</span>
+            <span class="pill pill-gold">Very low cost of living</span>
+          </div>
+        </div>
+        <div class="uni-toggle">+</div>
+      </div>
+      <div class="uni-body">
+        <div class="info-grid">
+          <div class="info-item"><div class="lbl">Your program</div><div class="val">M.A. International Management & Information Systems</div></div>
+          <div class="info-item"><div class="lbl">Tuition</div><div class="val">€0 tuition + ~€300/semester fee</div></div>
+          <div class="info-item"><div class="lbl">Living cost</div><div class="val">~€650–800/month</div></div>
+          <div class="info-item"><div class="lbl">Application deadline</div><div class="val">Winter: June 15 · Summer: December 15</div></div>
+          <div class="info-item"><div class="lbl">Application portal</div><div class="val">Direct university portal</div></div>
+          <div class="info-item"><div class="lbl">Language requirement</div><div class="val">English only</div></div>
+        </div>
+        <div class="sub-section">
+          <h4>About the program</h4>
+          <p>A Fachhochschule (university of applied sciences) — less research-heavy, more hands-on. The program combines IS with international management, making it one of the most direct fits for a future consulting or digital transformation management career. Small class sizes, strong practical orientation, very low cost of living. Less prestigious than the others — treat as a strong safety school.</p>
+        </div>
+        <div class="sub-section">
+          <h4>Entry requirements</h4>
+          <ul>
+            <li>Bachelor's in business, engineering, CS, or related field — Creative Technology + BA internship is a good fit</li>
+            <li>Standard English proficiency — MOI letter should work</li>
+          </ul>
+        </div>
+        <div class="sister-box">
+          <div class="sister-label">🔬 For your sister</div>
+          FH SWF does not have a Data Science masters in English. Not suitable for sister.
+        </div>
+        <div class="links-row">
+          <a href="https://www.fh-swf.de/en/international/international_master_program/master_program_for_im.php" target="_blank" class="link-btn link-btn-rust">Program page ↗</a>
+          <a href="https://www.fh-swf.de/en/international/international_master_program/" target="_blank" class="link-btn link-btn-outline">Apply ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PADERBORN -->
+    <div class="uni-card">
+      <div class="uni-card-head" onclick="toggleUni(this)">
+        <div>
+          <div class="uni-name">8. Paderborn University</div>
+          <div class="uni-city">Paderborn, NRW · Public · Free for non-EU</div>
+          <div class="uni-pills">
+            <span class="pill pill-slate">Strong CS / IS dept.</span>
+            <span class="pill pill-gold">Affordable university town</span>
+          </div>
+        </div>
+        <div class="uni-toggle">+</div>
+      </div>
+      <div class="uni-body">
+        <div class="info-grid">
+          <div class="info-item"><div class="lbl">Your program</div><div class="val">M.Sc. Business Information Systems</div></div>
+          <div class="info-item"><div class="lbl">Tuition</div><div class="val">€0 tuition + ~€310/semester fee</div></div>
+          <div class="info-item"><div class="lbl">Living cost</div><div class="val">~€650–850/month</div></div>
+          <div class="info-item"><div class="lbl">Application deadline</div><div class="val">Winter: May 31 · Summer: November 30</div></div>
+          <div class="info-item"><div class="lbl">Application portal</div><div class="val">uni-assist</div></div>
+          <div class="info-item"><div class="lbl">Language requirement</div><div class="val">IELTS 6.0+ / TOEFL 80+ — confirm English availability for Business IS</div></div>
+        </div>
+        <div class="sub-section">
+          <h4>About the program</h4>
+          <p>Paderborn has one of Germany's strongest CS departments, backed by the Heinz Nixdorf Institute and Paderborn Center for Parallel Computing. Business IS bridges CS with business management, digital systems, and IT strategy. Compact, safe university town. Home of the world's largest computer museum. Important: <strong>confirm with the university that Business IS is fully available in English</strong> — some tracks may have German components.</p>
+        </div>
+        <div class="sub-section">
+          <h4>Entry requirements</h4>
+          <ul>
+            <li>Relevant bachelor's in CS or business informatics</li>
+            <li>Standard language and academic requirements</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <h4>Scholarships</h4>
+          <ul>
+            <li><strong>Studienfonds OWL / Deutschlandstipendium:</strong> €300/month — application typically March–May</li>
+            <li><strong>DAAD:</strong> External (see Scholarships section)</li>
+          </ul>
+        </div>
+        <div class="sister-box">
+          <div class="sister-label">🔬 For your sister</div>
+          Paderborn has M.Sc. Computer Science in English with strong data/AI tracks. Not a dedicated Data Science title, but the curriculum covers it deeply. A reasonable option if she applies alongside you.
+        </div>
+        <div class="links-row">
+          <a href="https://www.uni-paderborn.de/en/studies" target="_blank" class="link-btn link-btn-rust">Programs ↗</a>
+          <a href="https://www.uni-paderborn.de/en/studies/how-to-apply" target="_blank" class="link-btn link-btn-outline">How to apply ↗</a>
+          <a href="https://www.uni-paderborn.de/en/studies/international-office/degree-students/live-in-paderborn-and-on-campus/finances" target="_blank" class="link-btn link-btn-outline">Costs ↗</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end uni-grid -->
+</div>
+</div>
+
+<!-- TIMELINE -->
+<div id="timeline">
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2>Step-by-step timeline</h2>
+  </div>
+
+  <div class="alert alert-rust">
+    <strong>Target: Winter Semester 2027 (October 2027).</strong> You finish your degree ~July 2025. This gives you ~24 months. The timeline below is built backward from October 2027 application deadlines.
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot urgent"></div>
+      <div class="tl-date">Now — July 2025 <span class="tl-tag tag-now">Do this now</span></div>
+      <div class="tl-title">Graduate & request documents immediately</div>
+      <div class="tl-desc">Before you do anything else, start collecting your official documents. These take time at Thai universities.</div>
+      <ul class="tl-tasks">
+        <li>Request official transcripts from MUIC (allow 2–4 weeks processing)</li>
+        <li>Request official degree certificate / graduation confirmation letter</li>
+        <li>Request official GPA letter / academic standing letter</li>
+        <li>Get certified translations into English (your documents are already in English — confirm if German-certified translations are also needed)</li>
+        <li>Check passport validity — must be valid until at least April 2028 (6 months beyond end of studies)</li>
+        <li>Renew passport now if needed</li>
+        <li>Save your MUIC MOI letter safely (you already have it dated April 4, 2025)</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot urgent"></div>
+      <div class="tl-date">July – September 2025 <span class="tl-tag tag-now">Do this soon</span></div>
+      <div class="tl-title">Book and take IELTS</div>
+      <div class="tl-desc">Your MOI letter will work for most admissions, but IELTS is recommended as a backup and is important for your visa application at the German Embassy Bangkok.</div>
+      <ul class="tl-tasks">
+        <li>Register at IDP or British Council Thailand: <a href="https://www.idp.com/thailand/" target="_blank">idp.com/thailand</a></li>
+        <li>Target: IELTS Academic, minimum 6.5, ideally 7.0</li>
+        <li>Given your MUIC background you likely won't need heavy prep — 2–4 weeks of practice tests is sufficient</li>
+        <li>Results are valid for 2 years — a test in Aug/Sep 2025 is valid until Aug/Sep 2027, covering your application period</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">August – October 2025 <span class="tl-tag tag-soon">Next priority</span></div>
+      <div class="tl-title">Build your CV and ask for recommendation letters</div>
+      <div class="tl-desc">Recommendations take time. Ask early — professors are busy and may need months of notice.</div>
+      <ul class="tl-tasks">
+        <li>Write a 1–2 page academic CV (name, education, relevant coursework, GPA, internship, skills, any extracurriculars)</li>
+        <li>Email 2 professors you are on good terms with — brief message explaining you're applying to German master's programs and asking if they'd be willing to write a letter of recommendation</li>
+        <li>Email your internship supervisor (1 person is enough for work experience)</li>
+        <li>Give recommenders your CV and a short paragraph about each program's focus — this helps them write relevant letters</li>
+        <li>Set a deadline with them: ask for letters to be ready by March 2027 at the latest</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">October 2025 – March 2026 <span class="tl-tag tag-soon">Prepare & learn</span></div>
+      <div class="tl-title">Start German (optional but smart) + research programs deeply</div>
+      <ul class="tl-tasks">
+        <li>Start German at A1 level — apps like Duolingo, Pimsleur, or a local class in Thailand. Even A1–A2 helps enormously with daily life and shows commitment to Germany in your motivation letter</li>
+        <li>Read each university's program page carefully — understand the curriculum, elective tracks, and what professors research</li>
+        <li>Email admissions offices at Münster and Bamberg specifically to ask about equivalency of your Creative Technology degree — do this early so there are no surprises at application time</li>
+        <li>Check if uni-assist is required for each university (it is for Bamberg, Chemnitz, Marburg, Paderborn)</li>
+        <li>Create accounts on uni-assist and relevant portals so you're not scrambling later</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">October 2026 – January 2027 <span class="tl-tag tag-later">DAAD Scholarship</span></div>
+      <div class="tl-title">Apply for DAAD Study Scholarship</div>
+      <div class="tl-desc">The DAAD general study scholarship for master's programs typically has a deadline of October–November for programs starting the following year. This is your main scholarship shot.</div>
+      <ul class="tl-tasks">
+        <li>Check exact deadline: <a href="https://www.daad.de/en/studying-in-germany/scholarships/daad-scholarships/" target="_blank">daad.de scholarships</a> and <a href="https://www.daad-thailand.org" target="_blank">daad-thailand.org</a></li>
+        <li>Prepare: DAAD application form, motivation letter (DAAD version — longer and more specific), CV, 2 academic recommendation letters, IELTS certificate, transcripts, degree certificate</li>
+        <li>The DAAD motivation letter asks specifically: why Germany, why this specific program, what will you do with the degree in your home country/career</li>
+        <li>Your GPA of <span class="gpa-locked" onclick="unlockGPA(this)" title="Click to reveal">████ <span class="gpa-unlock-hint">🔒</span></span> is a strong asset here — DAAD selection is primarily academic merit</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">January – February 2027 <span class="tl-tag tag-later">Draft applications</span></div>
+      <div class="tl-title">Write your motivation letters (one per university)</div>
+      <div class="tl-desc">This is the most important preparation step. See the Motivation Letter section for exactly what to write.</div>
+      <ul class="tl-tasks">
+        <li>Write a master template then customise for each university — each letter should mention the specific program, specific professors, and why that particular university</li>
+        <li>Have someone (ideally a native English speaker or professor) review your letters</li>
+        <li>Typical length: 1–1.5 pages (600–800 words)</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">April 2027 <span class="tl-tag tag-later">Applications open</span></div>
+      <div class="tl-title">Submit applications — start with earliest deadlines first</div>
+      <div class="tl-desc">Application windows open. Submit in this order based on deadlines and difficulty:</div>
+      <ul class="tl-tasks">
+        <li><strong>1st: TUHH / GTIME</strong> — deadline ~March 1 (apply in late Feb)</li>
+        <li><strong>2nd: Münster</strong> — opens May 10, submit as early as possible (May 10–15)</li>
+        <li><strong>3rd: Paderborn / FH SWF</strong> — deadline ~May 31 / June 15</li>
+        <li><strong>4th: Bamberg / Marburg</strong> — deadline May 31 / July 15</li>
+        <li><strong>5th: Duisburg-Essen / Chemnitz</strong> — deadline May 31 / July 15</li>
+        <li>For uni-assist applications: submit at least 6 weeks before the deadline (uni-assist processing takes time)</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">May – July 2027 <span class="tl-tag tag-later">Post-application</span></div>
+      <div class="tl-title">Set up blocked account & prepare visa documents</div>
+      <ul class="tl-tasks">
+        <li>Once you receive any admission offer: set up a blocked account immediately — Fintiba (<a href="https://www.fintiba.com" target="_blank">fintiba.com</a>) or Coracle (<a href="https://www.coracle.de" target="_blank">coracle.de</a>)</li>
+        <li>Deposit €11,904 (required for German student visa)</li>
+        <li>Book visa appointment at German Embassy Bangkok — appointments fill up fast, book as soon as you have an admission letter</li>
+        <li>Arrange German health insurance (TK or AOK are popular for students)</li>
+        <li>Apply for dormitory / accommodation at your chosen university — do this immediately on admission</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">August – September 2027 <span class="tl-tag tag-later">Arrival prep</span></div>
+      <div class="tl-title">Visa, enrollment, and departure</div>
+      <ul class="tl-tasks">
+        <li>German student visa appointment (bring: admission letter, blocked account confirmation, health insurance, MOI/IELTS, transcripts, passport, biometric photo)</li>
+        <li>Enroll at university online before arrival</li>
+        <li>Book flights — aim to arrive 1–2 weeks before lectures start (October 1)</li>
+        <li>Register at Einwohnermeldeamt (residents' registration) within 2 weeks of arrival</li>
+        <li>Collect student ID card (Campuscard) in person at university</li>
+        <li>Open German bank account (N26, Deutsche Bank, or Sparkasse)</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- DOCUMENTS -->
+<div id="documents" style="background: var(--cream);">
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2>Documents you need</h2>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Documents checked off</span><span id="doc-progress-label">0 / 0</span></div>
+    <div class="progress-track"><div class="progress-fill" id="doc-progress-fill" style="width:0%"></div></div>
+  </div>
+
+  <div class="alert alert-sage" style="margin-bottom:1.5rem;">
+    <strong>Check items off as you gather them.</strong> Click ✎ to add a note (e.g. "Requested 15 May", "Expires Jan 2028"). Upload files below — they're stored in your browser and you can download them back any time.
+  </div>
+
+  <div class="checklist-wrap">
+    <div class="checklist-title">Academic documents</div>
+    
+      <div class="check-item" id="ci-doc-acad-0" onclick="toggleCheck('doc-acad-0', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Official bachelor's degree certificate (request from MUIC after graduation)</div>
+          <textarea class="ci-note" id="note-doc-acad-0" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-acad-0', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-acad-0', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-acad-1" onclick="toggleCheck('doc-acad-1', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Complete transcripts for all semesters — official, stamped</div>
+          <textarea class="ci-note" id="note-doc-acad-1" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-acad-1', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-acad-1', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-acad-2" onclick="toggleCheck('doc-acad-2', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Official GPA letter / academic standing confirmation</div>
+          <textarea class="ci-note" id="note-doc-acad-2" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-acad-2', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-acad-2', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-acad-3" onclick="toggleCheck('doc-acad-3', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">MUIC MOI letter (dated April 4, 2025 — you already have this ✅)</div>
+          <textarea class="ci-note" id="note-doc-acad-3" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-acad-3', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-acad-3', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-acad-4" onclick="toggleCheck('doc-acad-4', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">IELTS Academic certificate (target 6.5+ — book test July/August 2025)</div>
+          <textarea class="ci-note" id="note-doc-acad-4" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-acad-4', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-acad-4', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-acad-5" onclick="toggleCheck('doc-acad-5', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Certified translations if required (most programs accept English originals — check per uni)</div>
+          <textarea class="ci-note" id="note-doc-acad-5" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-acad-5', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-acad-5', event)" title="Add note">✎</button>
+      </div>
+  </div>
+  <div class="checklist-wrap">
+    <div class="checklist-title">Personal documents</div>
+    
+      <div class="check-item" id="ci-doc-personal-0" onclick="toggleCheck('doc-personal-0', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Valid passport (must be valid until at least April 2028 — check now)</div>
+          <textarea class="ci-note" id="note-doc-personal-0" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-personal-0', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-personal-0', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-personal-1" onclick="toggleCheck('doc-personal-1', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Biometric passport photos (needed for visa application)</div>
+          <textarea class="ci-note" id="note-doc-personal-1" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-personal-1', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-personal-1', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-personal-2" onclick="toggleCheck('doc-personal-2', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Curriculum Vitae / academic résumé (1–2 pages, in English)</div>
+          <textarea class="ci-note" id="note-doc-personal-2" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-personal-2', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-personal-2', event)" title="Add note">✎</button>
+      </div>
+  </div>
+  <div class="checklist-wrap">
+    <div class="checklist-title">Application-specific documents</div>
+    
+      <div class="check-item" id="ci-doc-app-0" onclick="toggleCheck('doc-app-0', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Motivation letter — Münster (customised)</div>
+          <textarea class="ci-note" id="note-doc-app-0" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-app-0', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-app-0', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-app-1" onclick="toggleCheck('doc-app-1', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Motivation letter — Bamberg (customised)</div>
+          <textarea class="ci-note" id="note-doc-app-1" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-app-1', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-app-1', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-app-2" onclick="toggleCheck('doc-app-2', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Motivation letter — Marburg (customised)</div>
+          <textarea class="ci-note" id="note-doc-app-2" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-app-2', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-app-2', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-app-3" onclick="toggleCheck('doc-app-3', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Motivation letter — Chemnitz (customised)</div>
+          <textarea class="ci-note" id="note-doc-app-3" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-app-3', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-app-3', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-app-4" onclick="toggleCheck('doc-app-4', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Motivation letter — Duisburg-Essen (customised)</div>
+          <textarea class="ci-note" id="note-doc-app-4" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-app-4', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-app-4', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-app-5" onclick="toggleCheck('doc-app-5', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Motivation letter — TUHH GTIME (customised)</div>
+          <textarea class="ci-note" id="note-doc-app-5" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-app-5', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-app-5', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-app-6" onclick="toggleCheck('doc-app-6', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Motivation letter — FH SWF (customised)</div>
+          <textarea class="ci-note" id="note-doc-app-6" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-app-6', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-app-6', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-app-7" onclick="toggleCheck('doc-app-7', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Motivation letter — Paderborn (customised)</div>
+          <textarea class="ci-note" id="note-doc-app-7" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-app-7', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-app-7', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-app-8" onclick="toggleCheck('doc-app-8', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Letter of recommendation — Professor 1</div>
+          <textarea class="ci-note" id="note-doc-app-8" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-app-8', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-app-8', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-app-9" onclick="toggleCheck('doc-app-9', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Letter of recommendation — Professor 2</div>
+          <textarea class="ci-note" id="note-doc-app-9" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-app-9', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-app-9', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-app-10" onclick="toggleCheck('doc-app-10', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Letter of recommendation — Internship supervisor</div>
+          <textarea class="ci-note" id="note-doc-app-10" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-app-10', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-app-10', event)" title="Add note">✎</button>
+      </div>
+  </div>
+  <div class="checklist-wrap">
+    <div class="checklist-title">Financial & visa documents (needed later)</div>
+    
+      <div class="check-item" id="ci-doc-fin-0" onclick="toggleCheck('doc-fin-0', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Blocked account confirmation (Fintiba or Coracle) — €11,904 minimum</div>
+          <textarea class="ci-note" id="note-doc-fin-0" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-fin-0', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-fin-0', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-fin-1" onclick="toggleCheck('doc-fin-1', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">German health insurance confirmation (TK, AOK, etc.)</div>
+          <textarea class="ci-note" id="note-doc-fin-1" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-fin-1', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-fin-1', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-fin-2" onclick="toggleCheck('doc-fin-2', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Admission / acceptance letter from university</div>
+          <textarea class="ci-note" id="note-doc-fin-2" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-fin-2', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-fin-2', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-fin-3" onclick="toggleCheck('doc-fin-3', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Proof of accommodation (dorm offer or rental agreement)</div>
+          <textarea class="ci-note" id="note-doc-fin-3" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-fin-3', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-fin-3', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-doc-fin-4" onclick="toggleCheck('doc-fin-4', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">German student visa application form (German Embassy Bangkok)</div>
+          <textarea class="ci-note" id="note-doc-fin-4" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('doc-fin-4', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('doc-fin-4', event)" title="Add note">✎</button>
+      </div>
+  </div>
+
+  <hr class="divider">
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:.5rem;">Document vault</h3>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:1rem;">Upload your documents here. They're stored in your browser — you can download them back any time. Nothing is sent to any server.</p>
+
+  <div class="upload-section-header">Upload documents</div>
+  <div class="doc-upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()" ondragover="handleDrag(event)" ondrop="handleDrop(event)" ondragleave="this.classList.remove('drag-over')">
+    <input type="file" id="file-input" multiple onchange="handleFiles(this.files)">
+    <div class="upload-icon">📎</div>
+    <p><strong>Click to upload</strong> or drag and drop</p>
+    <p>PDF, JPG, PNG, DOCX — any format</p>
+  </div>
+  <div class="uploaded-files" id="uploaded-files"></div>
+
+</div>
+</div>
+
+<!-- MOTIVATION LETTER -->
+<div id="motiv">
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2>The motivation letter</h2>
+  </div>
+
+  <div class="alert alert-slate">
+    <strong>This is the most important document you will write.</strong> German university admission committees read hundreds of letters. Most are generic. Yours should be specific, honest, and show that you've thought carefully about why this exact program at this exact university is right for you. Length: 600–800 words, 1–1.5 pages.
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:1rem;">The structure (5 paragraphs)</h3>
+
+  <div style="background:white; border:1px solid var(--border); border-radius:5px; overflow:hidden; margin-bottom:1.5rem;">
+    <div style="padding:.7rem 1rem; background:var(--ink); color:white; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;">Para 1 — The opening hook (2–4 sentences)</div>
+    <div style="padding:1rem; font-size:13px; color:#333; line-height:1.7;">Don't start with "I am applying to..." Start with a specific observation or moment that connects you to the field. Example: "During my internship as a business analyst, I noticed that the biggest obstacles to digital adoption weren't technical — they were organisational. That observation set me on a path toward understanding the intersection of information systems and business transformation." This shows self-awareness and genuine motivation.</div>
+  </div>
+  <div style="background:white; border:1px solid var(--border); border-radius:5px; overflow:hidden; margin-bottom:1.5rem;">
+    <div style="padding:.7rem 1rem; background:var(--ink); color:white; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;">Para 2 — Your academic background (why it's relevant)</div>
+    <div style="padding:1rem; font-size:13px; color:#333; line-height:1.7;">Bachelor of Arts and Science in Creative Technology at MUIC. Connect this to the program: your degree gave you the ability to think across disciplines — design thinking, problem-solving, technology systems, and communication. Mention your GPA (<span class="gpa-locked" onclick="unlockGPA(this)" title="Click to reveal">████ <span class="gpa-unlock-hint">🔒</span></span>). Mention specific courses that are relevant (any IS, data, technology, or business courses). Don't apologise for not having a pure CS background — frame Creative Technology as a strength that gives you a unique perspective.</div>
+  </div>
+  <div style="background:white; border:1px solid var(--border); border-radius:5px; overflow:hidden; margin-bottom:1.5rem;">
+    <div style="padding:.7rem 1rem; background:var(--ink); color:white; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;">Para 3 — Professional experience</div>
+    <div style="padding:1rem; font-size:13px; color:#333; line-height:1.7;">Describe your 4-month business analyst internship. What did you actually do? What did you learn? Be honest that it was repetitive — but frame what it taught you: exposure to real organisational processes, how data flows through businesses, and what problems actually need solving. This authenticity reads better than inflated claims. It also explains why you want a master's — to go deeper than what internship work allows.</div>
+  </div>
+  <div style="background:white; border:1px solid var(--border); border-radius:5px; overflow:hidden; margin-bottom:1.5rem;">
+    <div style="padding:.7rem 1rem; background:var(--ink); color:white; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;">Para 4 — Why THIS program at THIS university (most important)</div>
+    <div style="padding:1rem; font-size:13px; color:#333; line-height:1.7;">This is where most letters fail — they're generic. For Münster, write: "The IS program's 'Managing Digital Business' track directly addresses the challenges I observed — how organisations use technology strategically. The fact that it is backed by ERCIS, the leading IS research network in Europe, means I will be working at the intersection of cutting-edge research and industry practice." For Bamberg: mention IISM's SAP and ERP focus. For TUHH: mention design thinking and the international second year. Each letter must be different here.</div>
+  </div>
+  <div style="background:white; border:1px solid var(--border); border-radius:5px; overflow:hidden; margin-bottom:1.5rem;">
+    <div style="padding:.7rem 1rem; background:var(--ink); color:white; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;">Para 5 — Career goals and what you'll do with this degree</div>
+    <div style="padding:1rem; font-size:13px; color:#333; line-height:1.7;">You don't need a fully formed plan — you need a believable direction. "I aim to build a career at the intersection of technology and business, initially in a consulting or product management role at a technology-forward company in Europe. In the longer term, I hope to apply what I learn to build or contribute to ventures that address digital transformation challenges in Southeast Asia." Mentioning Southeast Asia is smart — it shows cultural awareness and a development narrative that resonates with DAAD and German institutions.</div>
+  </div>
+
+  <div class="motiv-grid">
+    <div class="motiv-card do">
+      <h4>✅ Do include</h4>
+      <ul>
+        <li>Specific courses from your degree that are relevant</li>
+        <li>The name of the specific program track you're applying to</li>
+        <li>At least one specific professor, module, or research centre at that university</li>
+        <li>Your GPA (it's strong — mention it)</li>
+        <li>What you genuinely found interesting, even if it wasn't your internship</li>
+        <li>A clear (even if broad) career direction</li>
+        <li>Why Germany specifically (academic quality, European job market, tuition-free)</li>
+      </ul>
+    </div>
+    <div class="motiv-card dont">
+      <h4>❌ Do not include</h4>
+      <ul>
+        <li>"I have always been passionate about..." (cliché opener)</li>
+        <li>Vague statements about "making a difference"</li>
+        <li>Copying the same letter to every university without changing para 4</li>
+        <li>Mentioning you applied to many universities</li>
+        <li>Overly long sentences or academic jargon</li>
+        <li>Lies or exaggerations about your experience</li>
+        <li>Anything over 900 words</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- SCHOLARSHIPS -->
+<div id="scholarships" style="background: var(--cream);">
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2>Scholarships</h2>
+  </div>
+
+  <div class="alert alert-sage">
+    <strong>Your eligibility summary.</strong> You do NOT need work experience for the main DAAD scholarship. Your GPA of <span class="gpa-locked" onclick="unlockGPA(this)" title="Click to reveal">████ <span class="gpa-unlock-hint">🔒</span></span> puts you in the competitive zone. The key is a strong motivation letter and clear academic/career narrative.
+  </div>
+
+  <div class="sc-grid">
+
+    <div class="sc-card" style="border-top: 3px solid var(--rust);">
+      <h3>DAAD Study Scholarship (All Disciplines)</h3>
+      <div class="sc-amount">€992/month + travel allowance + health insurance</div>
+      <p><strong>Eligibility:</strong> You qualify. No work experience required. GPA must be above average — yours at <span class="gpa-locked" onclick="unlockGPA(this)" title="Click to reveal">████ <span class="gpa-unlock-hint">🔒</span></span> is excellent. Must be applying for a full degree program starting in Germany.</p>
+      <ul>
+        <li>Duration: 10–24 months (length of your master's)</li>
+        <li>Typical deadline: October/November for programs starting the following October</li>
+        <li>Apply through the DAAD Thailand office or online portal</li>
+        <li>Requires: DAAD-specific motivation letter, CV, 2 academic recommendation letters, transcripts, IELTS</li>
+      </ul>
+      <div class="links-row">
+        <a href="https://www.daad-thailand.org/en/find-funding/scholarships-for-thailand/" target="_blank" class="link-btn link-btn-rust">DAAD Thailand ↗</a>
+        <a href="https://www.daad.de/en/studying-in-germany/scholarships/daad-scholarships/" target="_blank" class="link-btn link-btn-outline">DAAD scholarships ↗</a>
+      </div>
+    </div>
+
+    <div class="sc-card" style="border-top: 3px solid var(--sage);">
+      <h3>Deutschlandstipendium (Germany Scholarship)</h3>
+      <div class="sc-amount">€300/month for minimum 2 semesters</div>
+      <p><strong>Eligibility:</strong> You qualify once enrolled at a German university. Apply through the specific university's portal after receiving admission. Available at Münster, Bamberg, Marburg, Paderborn, and others on your list.</p>
+      <ul>
+        <li>Based on academic merit + social engagement + personal achievements</li>
+        <li>Your GPA <span class="gpa-locked" onclick="unlockGPA(this)" title="Click to reveal">████ <span class="gpa-unlock-hint">🔒</span></span> and international background are strong selling points</li>
+        <li>Apply per-university — each has its own deadline (typically spring)</li>
+        <li>Can be held simultaneously with DAAD in some cases</li>
+      </ul>
+      <div class="links-row">
+        <a href="https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html" target="_blank" class="link-btn link-btn-sage">Apply ↗</a>
+      </div>
+    </div>
+
+    <div class="sc-card" style="border-top: 3px solid var(--slate);">
+      <h3>DAAD STEM Scholarship (Developing Countries)</h3>
+      <div class="sc-amount">Monthly stipend + full costs — competitive</div>
+      <p><strong>Eligibility:</strong> Thailand is an eligible country. No work experience required for this variant. Must be in a STEM field — Information Systems, Business Informatics, and Digital Technology programs qualify.</p>
+      <ul>
+        <li>Targeted at students from developing/emerging countries wanting to build careers in STEM</li>
+        <li>Selection is highly competitive — strong GPA + clear development-oriented motivation letter essential</li>
+        <li>Deadline: typically July for following year intake</li>
+      </ul>
+      <div class="links-row">
+        <a href="https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?detail=57742130" target="_blank" class="link-btn link-btn-outline">DAAD STEM ↗</a>
+      </div>
+    </div>
+
+    <div class="sc-card" style="border-top: 3px solid var(--gold);">
+      <h3>University-specific scholarships</h3>
+      <div class="sc-amount">Varies per university</div>
+      <ul>
+        <li><strong>Münster ProTalent:</strong> Merit-based, €300/month — check uni-muenster.de</li>
+        <li><strong>Bamberg:</strong> Deutschlandstipendium — apply after admission</li>
+        <li><strong>Paderborn / Studienfonds OWL:</strong> Application March–May each year</li>
+        <li><strong>TUHH GTIME:</strong> Friedrich-Ebert-Stiftung and DAAD scholarships specifically available for GTIME students</li>
+        <li><strong>All universities:</strong> Erasmus+ mobility grants available during studies for semester abroad</li>
+      </ul>
+    </div>
+
+    <div class="sc-card" style="border-top: 3px solid var(--muted);">
+      <h3>Additional external funding (Germany)</h3>
+      <div class="sc-amount">Varies</div>
+      <ul>
+        <li><strong>Heinrich Böll Foundation:</strong> For students with strong social/environmental commitment — <a href="https://www.boell.de/en/foundation/scholarships" target="_blank">boell.de</a></li>
+        <li><strong>Konrad-Adenauer-Stiftung:</strong> Available at Mannheim — political science orientation</li>
+        <li><strong>Friedrich-Naumann-Stiftung:</strong> Liberal values focus — <a href="https://www.freiheit.org/scholarships" target="_blank">freiheit.org</a></li>
+        <li><strong>Humboldt Foundation:</strong> More relevant for PhD — keep for future</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- MASTER CHECKLIST -->
+<div id="checklist">
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <h2>Master checklist</h2>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Overall progress</span><span id="cl-progress-label">0 / 0</span></div>
+    <div class="progress-track"><div class="progress-fill" id="cl-progress-fill" style="width:0%"></div></div>
+  </div>
+
+  <div class="checklist-wrap">
+    <div class="checklist-title">Now (before August 2025)</div>
+    
+      <div class="check-item" id="ci-cl-now-0" onclick="toggleCheck('cl-now-0', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Request official transcripts from MUIC registrar</div>
+          <textarea class="ci-note" id="note-cl-now-0" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-now-0', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-now-0', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-now-1" onclick="toggleCheck('cl-now-1', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Request official degree certificate / graduation confirmation</div>
+          <textarea class="ci-note" id="note-cl-now-1" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-now-1', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-now-1', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-now-2" onclick="toggleCheck('cl-now-2', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Request official GPA letter from MUIC</div>
+          <textarea class="ci-note" id="note-cl-now-2" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-now-2', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-now-2', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-now-3" onclick="toggleCheck('cl-now-3', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Check passport validity — renew if expires before April 2028</div>
+          <textarea class="ci-note" id="note-cl-now-3" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-now-3', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-now-3', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-now-4" onclick="toggleCheck('cl-now-4', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Save and make copies of your MUIC MOI letter (April 4, 2025)</div>
+          <textarea class="ci-note" id="note-cl-now-4" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-now-4', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-now-4', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-now-5" onclick="toggleCheck('cl-now-5', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Email 2–3 professors asking if they'll write recommendation letters</div>
+          <textarea class="ci-note" id="note-cl-now-5" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-now-5', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-now-5', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-now-6" onclick="toggleCheck('cl-now-6', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Email internship supervisor asking same</div>
+          <textarea class="ci-note" id="note-cl-now-6" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-now-6', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-now-6', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-now-7" onclick="toggleCheck('cl-now-7', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Book IELTS Academic exam — target July or August 2025</div>
+          <textarea class="ci-note" id="note-cl-now-7" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-now-7', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-now-7', event)" title="Add note">✎</button>
+      </div>
+  </div>
+  <div class="checklist-wrap">
+    <div class="checklist-title">Aug–Dec 2025</div>
+    
+      <div class="check-item" id="ci-cl-aug-0" onclick="toggleCheck('cl-aug-0', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Receive and store IELTS result (target 6.5+)</div>
+          <textarea class="ci-note" id="note-cl-aug-0" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-aug-0', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-aug-0', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-aug-1" onclick="toggleCheck('cl-aug-1', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Write and finalize academic CV</div>
+          <textarea class="ci-note" id="note-cl-aug-1" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-aug-1', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-aug-1', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-aug-2" onclick="toggleCheck('cl-aug-2', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Start German A1 (Duolingo / YouTube / language school)</div>
+          <textarea class="ci-note" id="note-cl-aug-2" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-aug-2', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-aug-2', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-aug-3" onclick="toggleCheck('cl-aug-3', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Email Münster admissions to check equivalency of Creative Technology degree</div>
+          <textarea class="ci-note" id="note-cl-aug-3" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-aug-3', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-aug-3', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-aug-4" onclick="toggleCheck('cl-aug-4', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Email Bamberg IISM admissions same</div>
+          <textarea class="ci-note" id="note-cl-aug-4" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-aug-4', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-aug-4', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-aug-5" onclick="toggleCheck('cl-aug-5', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Create accounts on uni-assist portal</div>
+          <textarea class="ci-note" id="note-cl-aug-5" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-aug-5', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-aug-5', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-aug-6" onclick="toggleCheck('cl-aug-6', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Enrol in at least 1 online course to strengthen CV (see CV section)</div>
+          <textarea class="ci-note" id="note-cl-aug-6" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-aug-6', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-aug-6', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-aug-7" onclick="toggleCheck('cl-aug-7', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Start a small personal project to add to portfolio (see CV section)</div>
+          <textarea class="ci-note" id="note-cl-aug-7" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-aug-7', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-aug-7', event)" title="Add note">✎</button>
+      </div>
+  </div>
+  <div class="checklist-wrap">
+    <div class="checklist-title">Jan–Sep 2026</div>
+    
+      <div class="check-item" id="ci-cl-2026-0" onclick="toggleCheck('cl-2026-0', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Check DAAD application requirements for Oct 2027 intake</div>
+          <textarea class="ci-note" id="note-cl-2026-0" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-2026-0', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-2026-0', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-2026-1" onclick="toggleCheck('cl-2026-1', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Contact DAAD Thailand: info@daad-thailand.org</div>
+          <textarea class="ci-note" id="note-cl-2026-1" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-2026-1', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-2026-1', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-2026-2" onclick="toggleCheck('cl-2026-2', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Read module catalogs for all 8 universities</div>
+          <textarea class="ci-note" id="note-cl-2026-2" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-2026-2', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-2026-2', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-2026-3" onclick="toggleCheck('cl-2026-3', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Identify 1 professor at each university whose research interests you</div>
+          <textarea class="ci-note" id="note-cl-2026-3" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-2026-3', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-2026-3', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-2026-4" onclick="toggleCheck('cl-2026-4', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Follow up with recommenders — confirm still available</div>
+          <textarea class="ci-note" id="note-cl-2026-4" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-2026-4', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-2026-4', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-2026-5" onclick="toggleCheck('cl-2026-5', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Complete at least 1 substantial online certificate (Google, Coursera, etc.)</div>
+          <textarea class="ci-note" id="note-cl-2026-5" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-2026-5', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-2026-5', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-2026-6" onclick="toggleCheck('cl-2026-6', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Have a working version of a personal/portfolio project</div>
+          <textarea class="ci-note" id="note-cl-2026-6" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-2026-6', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-2026-6', event)" title="Add note">✎</button>
+      </div>
+  </div>
+  <div class="checklist-wrap">
+    <div class="checklist-title">Oct 2026 – Jan 2027</div>
+    
+      <div class="check-item" id="ci-cl-daad-0" onclick="toggleCheck('cl-daad-0', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Submit DAAD scholarship application</div>
+          <textarea class="ci-note" id="note-cl-daad-0" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-daad-0', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-daad-0', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-daad-1" onclick="toggleCheck('cl-daad-1', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Write DAAD-specific motivation letter</div>
+          <textarea class="ci-note" id="note-cl-daad-1" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-daad-1', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-daad-1', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-daad-2" onclick="toggleCheck('cl-daad-2', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Start drafting university motivation letters</div>
+          <textarea class="ci-note" id="note-cl-daad-2" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-daad-2', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-daad-2', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-daad-3" onclick="toggleCheck('cl-daad-3', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Confirm recommenders have letters ready</div>
+          <textarea class="ci-note" id="note-cl-daad-3" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-daad-3', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-daad-3', event)" title="Add note">✎</button>
+      </div>
+  </div>
+  <div class="checklist-wrap">
+    <div class="checklist-title">Feb–Mar 2027</div>
+    
+      <div class="check-item" id="ci-cl-feb-0" onclick="toggleCheck('cl-feb-0', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Finalize all 8 motivation letters (customised per university)</div>
+          <textarea class="ci-note" id="note-cl-feb-0" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-feb-0', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-feb-0', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-feb-1" onclick="toggleCheck('cl-feb-1', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Prepare application documents for each university</div>
+          <textarea class="ci-note" id="note-cl-feb-1" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-feb-1', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-feb-1', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-feb-2" onclick="toggleCheck('cl-feb-2', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Submit TUHH GTIME application (deadline ~March 1)</div>
+          <textarea class="ci-note" id="note-cl-feb-2" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-feb-2', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-feb-2', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-feb-3" onclick="toggleCheck('cl-feb-3', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Double-check all uni-assist documents are uploaded</div>
+          <textarea class="ci-note" id="note-cl-feb-3" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-feb-3', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-feb-3', event)" title="Add note">✎</button>
+      </div>
+  </div>
+  <div class="checklist-wrap">
+    <div class="checklist-title">April – July 2027</div>
+    
+      <div class="check-item" id="ci-cl-apps-0" onclick="toggleCheck('cl-apps-0', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Submit Münster application (opens May 10)</div>
+          <textarea class="ci-note" id="note-cl-apps-0" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-apps-0', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-apps-0', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-apps-1" onclick="toggleCheck('cl-apps-1', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Submit Paderborn application (deadline May 31)</div>
+          <textarea class="ci-note" id="note-cl-apps-1" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-apps-1', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-apps-1', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-apps-2" onclick="toggleCheck('cl-apps-2', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Submit FH SWF application (deadline June 15)</div>
+          <textarea class="ci-note" id="note-cl-apps-2" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-apps-2', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-apps-2', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-apps-3" onclick="toggleCheck('cl-apps-3', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Submit Bamberg via uni-assist (deadline May 31)</div>
+          <textarea class="ci-note" id="note-cl-apps-3" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-apps-3', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-apps-3', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-apps-4" onclick="toggleCheck('cl-apps-4', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Submit Marburg via uni-assist (deadline July 15)</div>
+          <textarea class="ci-note" id="note-cl-apps-4" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-apps-4', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-apps-4', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-apps-5" onclick="toggleCheck('cl-apps-5', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Submit Duisburg-Essen (deadline May 31)</div>
+          <textarea class="ci-note" id="note-cl-apps-5" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-apps-5', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-apps-5', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-apps-6" onclick="toggleCheck('cl-apps-6', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Submit Chemnitz via uni-assist (deadline July 15)</div>
+          <textarea class="ci-note" id="note-cl-apps-6" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-apps-6', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-apps-6', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-apps-7" onclick="toggleCheck('cl-apps-7', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Open blocked account (Fintiba or Coracle) — deposit €11,904</div>
+          <textarea class="ci-note" id="note-cl-apps-7" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-apps-7', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-apps-7', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-apps-8" onclick="toggleCheck('cl-apps-8', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Apply for Deutschlandstipendium at any admitted university</div>
+          <textarea class="ci-note" id="note-cl-apps-8" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-apps-8', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-apps-8', event)" title="Add note">✎</button>
+      </div>
+  </div>
+  <div class="checklist-wrap">
+    <div class="checklist-title">July – September 2027</div>
+    
+      <div class="check-item" id="ci-cl-visa-0" onclick="toggleCheck('cl-visa-0', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Receive admission decisions — accept first choice</div>
+          <textarea class="ci-note" id="note-cl-visa-0" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-visa-0', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-visa-0', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-visa-1" onclick="toggleCheck('cl-visa-1', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Book visa appointment at German Embassy Bangkok immediately</div>
+          <textarea class="ci-note" id="note-cl-visa-1" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-visa-1', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-visa-1', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-visa-2" onclick="toggleCheck('cl-visa-2', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Arrange German health insurance</div>
+          <textarea class="ci-note" id="note-cl-visa-2" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-visa-2', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-visa-2', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-visa-3" onclick="toggleCheck('cl-visa-3', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Apply for dormitory at chosen university</div>
+          <textarea class="ci-note" id="note-cl-visa-3" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-visa-3', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-visa-3', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-visa-4" onclick="toggleCheck('cl-visa-4', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Book flights (arrive by September 25, 2027)</div>
+          <textarea class="ci-note" id="note-cl-visa-4" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-visa-4', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-visa-4', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-visa-5" onclick="toggleCheck('cl-visa-5', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Attend German Embassy Bangkok visa appointment</div>
+          <textarea class="ci-note" id="note-cl-visa-5" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-visa-5', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-visa-5', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-visa-6" onclick="toggleCheck('cl-visa-6', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Enroll online at university</div>
+          <textarea class="ci-note" id="note-cl-visa-6" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-visa-6', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-visa-6', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-visa-7" onclick="toggleCheck('cl-visa-7', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Register at Einwohnermeldeamt within 14 days of arrival</div>
+          <textarea class="ci-note" id="note-cl-visa-7" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-visa-7', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-visa-7', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-visa-8" onclick="toggleCheck('cl-visa-8', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Open German bank account</div>
+          <textarea class="ci-note" id="note-cl-visa-8" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-visa-8', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-visa-8', event)" title="Add note">✎</button>
+      </div>
+      <div class="check-item" id="ci-cl-visa-9" onclick="toggleCheck('cl-visa-9', event)">
+        <div class="ci-box"><span class="ci-check">✓</span></div>
+        <div class="ci-body">
+          <div class="ci-text">Collect Campuscard from university in person</div>
+          <textarea class="ci-note" id="note-cl-visa-9" placeholder="Add a note..." onclick="event.stopPropagation()" oninput="saveNote('cl-visa-9', this.value)"></textarea>
+        </div>
+        <button class="ci-note-btn" onclick="toggleNote('cl-visa-9', event)" title="Add note">✎</button>
+      </div>
+  </div>
+  <div class="alert alert-rust" style="margin-top:2rem;">
+    <strong>On recommendation letters:</strong> Lead with 2 academic letters, add 1 professional letter as supplement. Brief each recommender with a short note explaining the program, what skills to highlight, and the deadline. The best letters describe a specific project or moment that showed your ability.
+  </div>
+</div>
+</div>
+
+
+
+<div id="cv-strengthen">
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">09</span>
+    <h2>Strengthen your CV</h2>
+  </div>
+
+  <div class="alert alert-slate">
+    <strong>Your current CV gap.</strong> A Creative Technology bachelor + 4-month BA internship is a reasonable starting point, but German IS/Digital programs expect some demonstrated interest in the field beyond your degree. The good news: 12–18 months is enough time to add 2–3 meaningful lines to your CV that directly address this.
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;margin:0 0 1rem;">Online certificates (free or cheap)</h3>
+  <div class="cv-grid">
+    <div class="cv-card">
+      <span class="cv-tag free-tag">Free audit</span>
+      <h3>Google Project Management Certificate</h3>
+      <p>Coursera. 6 months at ~5 hrs/week. Covers Agile, Scrum, stakeholder management, process design — all directly relevant to IS and digital transformation roles. Shows you can manage digital projects. Add it to your CV as a certification.</p>
+      <ul><li>Platform: <a href="https://www.coursera.org/professional-certificates/google-project-management" target="_blank">coursera.org</a></li><li>Duration: ~6 months</li><li>Cost: Free to audit, ~$50 for certificate</li></ul>
+    </div>
+    <div class="cv-card">
+      <span class="cv-tag free-tag">Free audit</span>
+      <h3>Google Data Analytics Certificate</h3>
+      <p>Coursera. Covers spreadsheets, SQL basics, R, Tableau. Even if data science isn't your core interest, having basic data literacy is expected in IS programs. Supports your 'structured logical thinker' profile and shows you can work with data professionally.</p>
+      <ul><li>Platform: <a href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank">coursera.org</a></li><li>Duration: ~6 months</li><li>Cost: Free to audit</li></ul>
+    </div>
+    <div class="cv-card">
+      <span class="cv-tag free-tag">Free</span>
+      <h3>IBM Design Thinking Practitioner</h3>
+      <p>IBM SkillsBuild. Free. Design thinking is explicitly mentioned in your GTIME and Münster programs. This certificate directly bridges your Creative Technology background with IS — it says: "I think creatively AND systematically." Short course, high signal.</p>
+      <ul><li>Platform: <a href="https://www.ibm.com/design/thinking/" target="_blank">ibm.com/design/thinking</a></li><li>Duration: ~1 month</li><li>Cost: Free</li></ul>
+    </div>
+    <div class="cv-card">
+      <span class="cv-tag free-tag">Free</span>
+      <h3>SAP Learning: Introduction to ERP & SAP S/4HANA</h3>
+      <p>SAP Learning Hub (free tier). Bamberg and Marburg both have close SAP ties. Having basic SAP literacy on your CV is a genuine differentiator for IS programs with an enterprise systems focus. Even a free intro course signals commitment.</p>
+      <ul><li>Platform: <a href="https://learning.sap.com" target="_blank">learning.sap.com</a></li><li>Duration: ~2–4 weeks</li><li>Cost: Free (intro courses)</li></ul>
+    </div>
+    <div class="cv-card">
+      <span class="cv-tag paid-tag">~€30–50 one time</span>
+      <h3>Agile / Scrum Foundation (Scrum.org or PMI)</h3>
+      <p>Scrum methodology is used in virtually every tech and IS environment in Germany. An official Scrum Foundation or PSM I certificate is internationally recognized and very cheap. Any IS employer or professor knows what it means.</p>
+      <ul><li>Platform: <a href="https://www.scrum.org/assessments/professional-scrum-master-i-certification" target="_blank">scrum.org</a></li><li>Duration: Self-study + exam (~1–2 weeks)</li><li>Cost: ~$150 for PSM I</li></ul>
+    </div>
+    <div class="cv-card">
+      <span class="cv-tag free-tag">Free</span>
+      <h3>Tableau Public / Power BI fundamentals</h3>
+      <p>Free online tutorials on both platforms. Being able to build a dashboard and publish it is a concrete, demonstrable skill. Pair this with a small project (see below) to show actual output, not just a certificate. Tableau Public has free learning resources.</p>
+      <ul><li>Platform: <a href="https://www.tableau.com/learn/training" target="_blank">tableau.com/learn</a></li><li>Duration: ~3–4 weeks</li><li>Cost: Free</li></ul>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;margin:1.5rem 0 1rem;">Projects to build (pick 1–2)</h3>
+  <div class="cv-grid">
+    <div class="cv-card">
+      <span class="cv-tag project-tag">Beginner-friendly</span>
+      <h3>Digital process mapping project</h3>
+      <p>Take a real process you know — your university's student registration, your internship company's workflow, or even a food delivery app's operations — and map it using a free tool like Miro or draw.io. Document inefficiencies and propose digital improvements. Write a 1-page report. This directly demonstrates IS thinking and is exactly what you'd do in a consulting or product role.</p>
+      <ul><li>Tools: Miro (free), draw.io (free), Google Docs</li><li>Time: 2–3 weekends</li><li>CV line: "Business Process Analysis — [topic], tools: BPMN, Miro"</li></ul>
+    </div>
+    <div class="cv-card">
+      <span class="cv-tag project-tag">Slightly technical</span>
+      <h3>Simple data dashboard (no coding required)</h3>
+      <p>Find a public dataset (Thailand tourism data, Mahidol student statistics, anything interesting to you) and build a visual dashboard using Tableau Public or Google Data Studio (free). Publish it online. This is a tangible portfolio piece. You can link it in your CV and motivation letter. Shows you can turn data into insight — core IS skill.</p>
+      <ul><li>Tools: Tableau Public (free), Google Looker Studio (free)</li><li>Data: data.go.th, Kaggle, World Bank open data</li><li>Time: 3–4 weekends</li><li>CV line: "Data visualisation — [topic] dashboard, Tableau Public"</li></ul>
+    </div>
+    <div class="cv-card">
+      <span class="cv-tag project-tag">Creative Tech angle</span>
+      <h3>Digital transformation case study</h3>
+      <p>Pick a Thai company (a retail chain, a bank, a hospital) and write a 2–3 page analysis of their digital transformation journey: what they changed, what tools they adopted, what the outcomes were. Use publicly available information and annual reports. This directly combines your Creative Technology background with IS and shows you can think strategically about technology in organizations.</p>
+      <ul><li>Tools: Google Docs, any research sources</li><li>Time: 1–2 weekends</li><li>CV line: "Independent Research — Digital Transformation Analysis, [company name]"</li></ul>
+    </div>
+    <div class="cv-card">
+      <span class="cv-tag project-tag">Entrepreneurial angle</span>
+      <h3>Mini product / app concept (no-code)</h3>
+      <p>Use Notion, Webflow, or Bubble (all have free tiers) to build a simple working concept for a digital product you'd want to exist. Document the problem, user journey, and solution. This fits perfectly with TUHH GTIME's innovation + entrepreneurship angle and shows systems thinking + creative execution — exactly your profile.</p>
+      <ul><li>Tools: Notion, Figma (free), Webflow (free tier)</li><li>Time: 1 month of evenings</li><li>CV line: "Product concept — [name], built with Figma / Notion / Webflow"</li></ul>
+    </div>
+  </div>
+
+  <div class="alert alert-sage" style="margin-top:1.5rem;">
+    <strong>What to aim for by application time (early 2027):</strong> 2 completed online certificates (Google PM + IBM Design Thinking are the highest signal ones), 1 personal project with something to show or link, and basic German A1–A2. That's enough to add 3–4 meaningful lines to your CV that directly address the IS program requirements and show you've been intentional about the transition from Creative Technology.
+  </div>
+
+</div>
+</div>
+
+<div id="calendar" style="background:var(--cream);">
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">08</span>
+    <h2>Week-by-week calendar</h2>
+  </div>
+  <div class="alert alert-slate">
+    <strong>What to do, when.</strong> This calendar runs from now (April 2026) through your arrival in Germany (October 2027). Each block shows the key actions for that period.
+  </div>
+  <div class="cal-grid">
+
+    <div class="cal-month">
+      <div class="cal-month-head"><h3>April – May 2026</h3><span class="cal-phase">PHASE 1 — FOUNDATIONS</span></div>
+      <div class="cal-weeks">
+        <div class="cal-week"><div class="cal-week-label">Apr W1</div><div class="cal-tasks-col">
+          <div class="cal-task ct-now">Request official transcripts and degree certificate from MUIC registrar — allow 2–4 weeks processing</div>
+          <div class="cal-task ct-now">Check passport expiry date. If expiring before April 2028, start renewal immediately</div>
+        </div></div>
+        <div class="cal-week"><div class="cal-week-label">Apr W2</div><div class="cal-tasks-col">
+          <div class="cal-task ct-now">Email 2–3 professors: brief note asking if they'd write a recommendation letter for German master's applications</div>
+          <div class="cal-task ct-now">Email internship supervisor with same request</div>
+        </div></div>
+        <div class="cal-week"><div class="cal-week-label">Apr W3</div><div class="cal-tasks-col">
+          <div class="cal-task ct-doc">Register on IELTS website (IDP or British Council Thailand) — book exam for July or August 2026</div>
+          <div class="cal-task ct-prep">Make digital copies of all existing documents: MOI letter, any awards, internship letter</div>
+        </div></div>
+        <div class="cal-week"><div class="cal-week-label">Apr W4 – May</div><div class="cal-tasks-col">
+          <div class="cal-task ct-prep">Start writing your academic CV — education, GPA, internship, relevant projects, skills</div>
+          <div class="cal-task ct-prep">Begin IELTS preparation — 30 min/day of practice tests. Focus on Academic Reading and Writing</div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="cal-month">
+      <div class="cal-month-head"><h3>June – August 2026</h3><span class="cal-phase">PHASE 1 — IELTS & CV</span></div>
+      <div class="cal-weeks">
+        <div class="cal-week"><div class="cal-week-label">June</div><div class="cal-tasks-col">
+          <div class="cal-task ct-doc">Take IELTS Academic exam — target band 6.5 or above</div>
+          <div class="cal-task ct-prep">Finalize academic CV — ask a professor or English-proficient friend to review it</div>
+          <div class="cal-task ct-prep">Start Duolingo German A1 — 15 min/day, consistent habit more important than intensity</div>
+        </div></div>
+        <div class="cal-week"><div class="cal-week-label">July</div><div class="cal-tasks-col">
+          <div class="cal-task ct-doc">Receive IELTS results — if below 6.5, rebook for September</div>
+          <div class="cal-task ct-prep">Create uni-assist account at uni-assist.de</div>
+          <div class="cal-task ct-app">Enrol in first online course: Google Project Management Certificate or Google Data Analytics on Coursera (free audit)</div>
+        </div></div>
+        <div class="cal-week"><div class="cal-week-label">August</div><div class="cal-tasks-col">
+          <div class="cal-task ct-prep">Email Münster IS admissions — ask about Creative Technology degree equivalency for their program</div>
+          <div class="cal-task ct-prep">Email Bamberg IISM admissions — same question</div>
+          <div class="cal-task ct-prep">Read the full module catalog for Münster IS program online</div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="cal-month">
+      <div class="cal-month-head"><h3>September – December 2026</h3><span class="cal-phase">PHASE 2 — DEEP RESEARCH</span></div>
+      <div class="cal-weeks">
+        <div class="cal-week"><div class="cal-week-label">Sep</div><div class="cal-tasks-col">
+          <div class="cal-task ct-prep">Read module catalogs for all 8 universities — note which electives excite you (this feeds your motivation letters)</div>
+          <div class="cal-task ct-prep">Identify 1 professor at each university whose research topic you can genuinely reference</div>
+          <div class="cal-task ct-prep">Start a small personal project: a simple dashboard, process map, or digital tool (see CV section)</div>
+        </div></div>
+        <div class="cal-week"><div class="cal-week-label">Oct</div><div class="cal-tasks-col">
+          <div class="cal-task ct-app">Check DAAD Thailand website for scholarship deadline — daad-thailand.org</div>
+          <div class="cal-task ct-app">Download DAAD application form and read requirements carefully</div>
+          <div class="cal-task ct-prep">Continue online course — aim to complete first certificate by December</div>
+        </div></div>
+        <div class="cal-week"><div class="cal-week-label">Nov–Dec</div><div class="cal-tasks-col">
+          <div class="cal-task ct-app">Write DAAD motivation letter — focus on: why Germany, why this program, career goals, Thailand/Southeast Asia context</div>
+          <div class="cal-task ct-app">Submit DAAD scholarship application before deadline (typically late Oct – mid Nov)</div>
+          <div class="cal-task ct-doc">Follow up with recommenders — confirm letters are being prepared, share DAAD requirements</div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="cal-month">
+      <div class="cal-month-head"><h3>January – March 2027</h3><span class="cal-phase">PHASE 3 — MOTIVATION LETTERS</span></div>
+      <div class="cal-weeks">
+        <div class="cal-week"><div class="cal-week-label">Jan</div><div class="cal-tasks-col">
+          <div class="cal-task ct-app">Write master motivation letter template (para 1–3 and 5 stay mostly the same across universities)</div>
+          <div class="cal-task ct-prep">Complete any outstanding online certificates — have at least 2 ready before applications open</div>
+          <div class="cal-task ct-doc">Collect final recommendation letters from all recommenders</div>
+        </div></div>
+        <div class="cal-week"><div class="cal-week-label">Feb</div><div class="cal-tasks-col">
+          <div class="cal-task ct-app">Customise motivation letter para 4 for each of the 8 universities — write 8 versions</div>
+          <div class="cal-task ct-app">Have letters reviewed by professor or native English speaker</div>
+          <div class="cal-task ct-app">Prepare TUHH GTIME full application package (deadline ~March 1)</div>
+        </div></div>
+        <div class="cal-week"><div class="cal-week-label">Mar W1</div><div class="cal-tasks-col">
+          <div class="cal-task ct-app">Submit TUHH GTIME application — first deadline of the year</div>
+          <div class="cal-task ct-doc">Prepare all physical/digital document sets for each university: transcript, MOI, IELTS, CV, letters</div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="cal-month">
+      <div class="cal-month-head"><h3>April – June 2027</h3><span class="cal-phase">PHASE 4 — APPLICATIONS</span></div>
+      <div class="cal-weeks">
+        <div class="cal-week"><div class="cal-week-label">Apr</div><div class="cal-tasks-col">
+          <div class="cal-task ct-app">Application windows open — double-check all documents are ready before submitting anything</div>
+          <div class="cal-task ct-app">Apply for Deutschlandstipendium at each university you've applied to (check per-university deadlines)</div>
+        </div></div>
+        <div class="cal-week"><div class="cal-week-label">May W1</div><div class="cal-tasks-col">
+          <div class="cal-task ct-app">Submit Münster application — opens May 10, submit within the first few days</div>
+          <div class="cal-task ct-app">Submit Duisburg-Essen application (deadline May 31)</div>
+          <div class="cal-task ct-app">Submit Bamberg via uni-assist (deadline May 31) — submit at least 3 weeks early to allow processing</div>
+        </div></div>
+        <div class="cal-week"><div class="cal-week-label">May W3</div><div class="cal-tasks-col">
+          <div class="cal-task ct-app">Submit Paderborn (deadline May 31)</div>
+          <div class="cal-task ct-app">Submit Marburg via uni-assist — deadline Jul 15 but submit now, processing takes 6 weeks</div>
+          <div class="cal-task ct-app">Submit Chemnitz via uni-assist — same, deadline Jul 15</div>
+        </div></div>
+        <div class="cal-week"><div class="cal-week-label">June</div><div class="cal-tasks-col">
+          <div class="cal-task ct-app">Submit FH SWF (deadline June 15)</div>
+          <div class="cal-task ct-visa">Open blocked account — Fintiba (fintiba.com) or Coracle (coracle.de) — deposit €11,904</div>
+          <div class="cal-task ct-prep">Research German health insurance options: TK (tk.de) or AOK (aok.de)</div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="cal-month">
+      <div class="cal-month-head"><h3>July – October 2027</h3><span class="cal-phase">PHASE 5 — VISA & ARRIVAL</span></div>
+      <div class="cal-weeks">
+        <div class="cal-week"><div class="cal-week-label">Jul</div><div class="cal-tasks-col">
+          <div class="cal-task ct-doc">Receive admission decisions — accept your first choice immediately</div>
+          <div class="cal-task ct-visa">Book visa appointment at German Embassy Bangkok the same day you receive admission</div>
+          <div class="cal-task ct-visa">Apply for dormitory at chosen university — do this immediately, dorms fill up fast</div>
+        </div></div>
+        <div class="cal-week"><div class="cal-week-label">Aug</div><div class="cal-tasks-col">
+          <div class="cal-task ct-visa">Attend visa appointment — bring: admission letter, blocked account, health insurance, MOI/IELTS, transcripts, passport, photos</div>
+          <div class="cal-task ct-visa">Confirm German health insurance is active from October 1</div>
+          <div class="cal-task ct-prep">Book flights — aim to arrive September 25–28</div>
+        </div></div>
+        <div class="cal-week"><div class="cal-week-label">Sep</div><div class="cal-tasks-col">
+          <div class="cal-task ct-visa">Enroll online at university before arrival</div>
+          <div class="cal-task ct-prep">Arrive in Germany 🇩🇪 — give yourself time to settle before lectures start October 1</div>
+          <div class="cal-task ct-visa">Register at Einwohnermeldeamt (residents' office) within 14 days of arrival</div>
+          <div class="cal-task ct-visa">Open German bank account (N26 is easiest for newcomers)</div>
+          <div class="cal-task ct-visa">Collect Campuscard (student ID) in person at university</div>
+        </div></div>
+        <div class="cal-week"><div class="cal-week-label">Oct 1</div><div class="cal-tasks-col">
+          <div class="cal-task ct-doc" style="font-weight:600;">🎓 First day of Winter Semester 2027 — you made it.</div>
+        </div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<footer>
+  <div><strong>Katip's Germany Masters Guide</strong></div>
+  <div style="margin-top:.5rem;">Built April 2026 · Target intake October 2027 · 8 universities · GPA <span class="gpa-locked" onclick="unlockGPA(this)" title="Click to reveal">████ <span class="gpa-unlock-hint">🔒</span></span> · MUIC Creative Technology</div>
+  <div style="margin-top:.5rem;">Always verify deadlines and requirements directly with each university — details change annually.</div>
+</footer>
+
+<script>
+function toggleUni(header) {
+  const body = header.nextElementSibling;
+  const toggle = header.querySelector('.uni-toggle');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  toggle.classList.toggle('open', !isOpen);
+  toggle.textContent = isOpen ? '+' : '×';
+}
+
+// Nav highlight on scroll
+const sections = document.querySelectorAll('[id]');
+const navLinks = document.querySelectorAll('nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 80) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+
+
+    <h2>Private document</h2>
+    <p>Enter the 4-digit code to unlock</p>
+    <div class="lock-input-row">
+      <input class="lock-digit" type="password" maxlength="1" inputmode="numeric" id="d0" autofocus>
+      <input class="lock-digit" type="password" maxlength="1" inputmode="numeric" id="d1">
+      <input class="lock-digit" type="password" maxlength="1" inputmode="numeric" id="d2">
+      <input class="lock-digit" type="password" maxlength="1" inputmode="numeric" id="d3">
+    </div>
+    <div class="lock-error" id="lock-error"></div>
+    <div class="lock-hint">Enter code to continue</div>
+  </div>
+</div>
+
+
+
+
+<div id="gpa-modal-bg">
+  <div id="gpa-modal">
+    <h3>Reveal GPA</h3>
+    <p>Enter the 4-digit code</p>
+    <div class="gpa-digit-row">
+      <input class="gpa-digit" type="password" maxlength="1" inputmode="numeric" id="gd0">
+      <input class="gpa-digit" type="password" maxlength="1" inputmode="numeric" id="gd1">
+      <input class="gpa-digit" type="password" maxlength="1" inputmode="numeric" id="gd2">
+      <input class="gpa-digit" type="password" maxlength="1" inputmode="numeric" id="gd3">
+    </div>
+    <div class="gpa-err-msg" id="gpa-err"></div>
+    <button class="gpa-cancel" onclick="closeGPAModal()">Cancel</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const CODE = '2202';
+  let _trigger = null;
+  const digits = ['gd0','gd1','gd2','gd3'].map(id => document.getElementById(id));
+  const errEl = document.getElementById('gpa-err');
+  const bg = document.getElementById('gpa-modal-bg');
+
+  window.unlockGPA = function(el) {
+    _trigger = el;
+    digits.forEach(d => { d.value = ''; d.classList.remove('gpa-error','gpa-ok'); });
+    errEl.textContent = '';
+    bg.classList.add('visible');
+    setTimeout(() => digits[0].focus(), 50);
+  };
+
+  window.closeGPAModal = function() {
+    bg.classList.remove('visible');
+    _trigger = null;
+  };
+
+  bg.addEventListener('click', function(e) { if (e.target === bg) closeGPAModal(); });
+
+  digits.forEach((d, i) => {
+    d.addEventListener('input', () => {
+      d.value = d.value.replace(/[^0-9]/g, '');
+      if (d.value && i < 3) digits[i+1].focus();
+      if (digits.every(x => x.value.length === 1)) checkGPA();
+    });
+    d.addEventListener('keydown', e => {
+      if (e.key === 'Backspace' && !d.value && i > 0) { digits[i-1].focus(); digits[i-1].value = ''; }
+      if (e.key === 'Escape') closeGPAModal();
+    });
+  });
+
+  function checkGPA() {
+    const entered = digits.map(d => d.value).join('');
+    if (entered === CODE) {
+      digits.forEach(d => d.classList.add('gpa-ok'));
+      setTimeout(() => {
+        // Replace all locked spans with the actual GPA value
+        document.querySelectorAll('.gpa-locked').forEach(el => {
+          const span = document.createElement('span');
+          span.style.fontFamily = "'DM Mono', monospace";
+          span.style.fontWeight = '500';
+          span.style.color = 'inherit';
+          span.textContent = '3.86';
+          el.replaceWith(span);
+        });
+        closeGPAModal();
+      }, 350);
+    } else {
+      digits.forEach(d => d.classList.add('gpa-error'));
+      errEl.textContent = 'Incorrect — try again';
+      setTimeout(() => {
+        digits.forEach(d => { d.classList.remove('gpa-error'); d.value = ''; });
+        errEl.textContent = '';
+        digits[0].focus();
+      }, 700);
+    }
+  }
+})();
+</script>
+
+
+<script>
+// ── COUNTDOWN ──────────────────────────────────────────────────────────────
+function updateCountdown() {
+  const target = new Date('2027-10-01T00:00:00');
+  const now = new Date();
+  const diff = target - now;
+  if (diff <= 0) { document.querySelector('.countdown-bar').innerHTML = '<div class="cd-inner"><span style="color:var(--rust);font-family:Playfair Display,serif;font-size:1.1rem;">🎓 Welcome to Germany!</span></div>'; return; }
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const mins = Math.floor((diff % 3600000) / 60000);
+  const secs = Math.floor((diff % 60000) / 1000);
+  const pad = n => String(n).padStart(2, '0');
+  document.getElementById('cd-days').textContent = days;
+  document.getElementById('cd-hours').textContent = pad(hours);
+  document.getElementById('cd-mins').textContent = pad(mins);
+  document.getElementById('cd-secs').textContent = pad(secs);
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ── CHECKLIST PERSISTENCE ──────────────────────────────────────────────────
+function toggleCheck(id, e) {
+  if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'BUTTON') return;
+  const el = document.getElementById('ci-' + id);
+  el.classList.toggle('done');
+  const state = JSON.parse(localStorage.getItem('checks') || '{}');
+  state[id] = el.classList.contains('done');
+  localStorage.setItem('checks', JSON.stringify(state));
+  updateProgress();
+}
+function toggleNote(id, e) {
+  e.stopPropagation();
+  const note = document.getElementById('note-' + id);
+  note.classList.toggle('visible');
+  if (note.classList.contains('visible')) note.focus();
+}
+function saveNote(id, val) {
+  const notes = JSON.parse(localStorage.getItem('notes') || '{}');
+  notes[id] = val;
+  localStorage.setItem('notes', JSON.stringify(notes));
+}
+function updateProgress() {
+  const all = document.querySelectorAll('.check-item');
+  const done = document.querySelectorAll('.check-item.done');
+  // doc section
+  const docAll = document.querySelectorAll('[id^="ci-doc-"], [id^="ci-doc-acad-"], [id^="ci-doc-personal-"], [id^="ci-doc-app-"], [id^="ci-doc-fin-"]').length;
+  const docDone = document.querySelectorAll('[id^="ci-doc-"].done, [id^="ci-doc-acad-"].done, [id^="ci-doc-personal-"].done, [id^="ci-doc-app-"].done, [id^="ci-doc-fin-"].done').length;
+  if (document.getElementById('doc-progress-fill')) {
+    document.getElementById('doc-progress-fill').style.width = docAll ? (docDone/docAll*100)+'%' : '0%';
+    document.getElementById('doc-progress-label').textContent = docDone + ' / ' + docAll;
+  }
+  // checklist section
+  const clAll = document.querySelectorAll('[id^="ci-cl-"]').length;
+  const clDone = document.querySelectorAll('[id^="ci-cl-"].done').length;
+  if (document.getElementById('cl-progress-fill')) {
+    document.getElementById('cl-progress-fill').style.width = clAll ? (clDone/clAll*100)+'%' : '0%';
+    document.getElementById('cl-progress-label').textContent = clDone + ' / ' + clAll;
+  }
+}
+function restoreState() {
+  const state = JSON.parse(localStorage.getItem('checks') || '{}');
+  const notes = JSON.parse(localStorage.getItem('notes') || '{}');
+  Object.entries(state).forEach(([id, done]) => {
+    const el = document.getElementById('ci-' + id);
+    if (el && done) el.classList.add('done');
+  });
+  Object.entries(notes).forEach(([id, val]) => {
+    const el = document.getElementById('note-' + id);
+    if (el && val) { el.value = val; el.classList.add('visible'); }
+  });
+  updateProgress();
+}
+document.addEventListener('DOMContentLoaded', restoreState);
+
+// ── FILE UPLOAD & DOWNLOAD ─────────────────────────────────────────────────
+let uploadedFiles = JSON.parse(localStorage.getItem('uploadedFiles') || '[]');
+
+function renderFiles() {
+  const container = document.getElementById('uploaded-files');
+  if (!container) return;
+  container.innerHTML = '';
+  uploadedFiles.forEach((f, i) => {
+    const div = document.createElement('div');
+    div.className = 'uploaded-file';
+    div.innerHTML = '<span style="font-size:1.2rem;flex-shrink:0">' + getFileIcon(f.name) + '</span>' +
+      '<span class="uf-name" title="' + f.name + '">' + f.name + '</span>' +
+      '<span class="uf-size">' + formatSize(f.size) + '</span>' +
+      '<button class="uf-download" onclick="downloadFile(' + i + ')" title="Download">⬇ Download</button>' +
+      '<button class="uf-delete" onclick="deleteFile(' + i + ')" title="Remove">✕</button>';
+    container.appendChild(div);
+  });
+}
+function getFileIcon(name) {
+  const ext = name.split('.').pop().toLowerCase();
+  if (ext === 'pdf') return '📄';
+  if (['jpg','jpeg','png','gif'].includes(ext)) return '🖼';
+  if (['doc','docx'].includes(ext)) return '📝';
+  return '📎';
+}
+function formatSize(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1048576) return (bytes/1024).toFixed(1) + ' KB';
+  return (bytes/1048576).toFixed(1) + ' MB';
+}
+function handleFiles(files) {
+  Array.from(files).forEach(file => {
+    const reader = new FileReader();
+    reader.onload = e => {
+      uploadedFiles.push({ name: file.name, size: file.size, data: e.target.result, type: file.type });
+      try { localStorage.setItem('uploadedFiles', JSON.stringify(uploadedFiles)); } catch(err) { alert('File too large to store in browser. Try a smaller file.'); uploadedFiles.pop(); }
+      renderFiles();
+    };
+    reader.readAsDataURL(file);
+  });
+}
+function downloadFile(i) {
+  const f = uploadedFiles[i];
+  const a = document.createElement('a');
+  a.href = f.data; a.download = f.name; a.click();
+}
+function deleteFile(i) {
+  uploadedFiles.splice(i, 1);
+  localStorage.setItem('uploadedFiles', JSON.stringify(uploadedFiles));
+  renderFiles();
+}
+function handleDrag(e) { e.preventDefault(); document.getElementById('upload-zone').classList.add('drag-over'); }
+function handleDrop(e) {
+  e.preventDefault();
+  document.getElementById('upload-zone').classList.remove('drag-over');
+  handleFiles(e.dataTransfer.files);
+}
+document.addEventListener('DOMContentLoaded', renderFiles);
+</script>
+
+</body>
+</html>
